@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAOZ | Branding Digital, Creatividad, Influencer Marketing & Gaming</title>
+  <meta name="description"
+    content="Agencia creativa especializada en Branding Digital, Creatividad 360°, Marketing Digital, Influencer Marketing, Streaming, Audiovisual, Gamificación y Approach Strategy en LATAM.">
+  <meta name="keywords"
+    content="branding digital, creatividad publicitaria, marketing digital, influencer marketing, streaming, audiovisual, gamificacion, approach strategy, agencia gaming chile">
+  <meta property="og:title" content="CAOZ | Hacemos que lo digital y gaming suceda">
+  <meta property="og:description"
+    content="Conectamos marcas globales con la comunidad digital y gamer a través de 8 disciplinas creativas integradas.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero-stage.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo-symbol.png">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ========================================================================
+       TOP TICKER / CINTILLO SUPERIOR (8 SKILLS)
+       ======================================================================== -->
+  <div class="top-bar-marquee" aria-hidden="true">
+    <div class="top-bar-track">
+      <span>BRANDING DIGITAL</span>
+      <span class="sep">●</span>
+      <span>CREATIVIDAD</span>
+      <span class="sep">●</span>
+      <span>MARKETING DIGITAL</span>
+      <span class="sep">●</span>
+      <span>INFLUENCER MARKETING</span>
+      <span class="sep">●</span>
+      <span>STREAMING</span>
+      <span class="sep">●</span>
+      <span>AUDIOVISUAL</span>
+      <span class="sep">●</span>
+      <span>GAMIFICACIÓN</span>
+      <span class="sep">●</span>
+      <span>APPROACH STRATEGY</span>
+      <span class="sep">●</span>
+      <span>BRANDING DIGITAL</span>
+      <span class="sep">●</span>
+      <span>CREATIVIDAD</span>
+      <span class="sep">●</span>
+      <span>MARKETING DIGITAL</span>
+      <span class="sep">●</span>
+      <span>INFLUENCER MARKETING</span>
+      <span class="sep">●</span>
+      <span>STREAMING</span>
+      <span class="sep">●</span>
+      <span>AUDIOVISUAL</span>
+      <span class="sep">●</span>
+      <span>GAMIFICACIÓN</span>
+      <span class="sep">●</span>
+      <span>APPROACH STRATEGY</span>
+      <span class="sep">●</span>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       HEADER / NAVEGACIÓN PRINCIPAL
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Inicio">
+        <img src="assets/images/logo-symbol.png" alt="CAOZ" class="brand-logo-img">
+        <span class="brand-logo-text">CAOZ</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#hero" class="nav-link active">Inicio</a>
+        <a href="#quienes-somos" class="nav-link">Quiénes Somos</a>
+        <a href="#skills" class="nav-link">Nuestros Skills</a>
+        <a href="#diferenciales" class="nav-link">Diferenciales</a>
+        <a href="#portafolio" class="nav-link">Casos de Éxito</a>
+        <!-- <a href="#cotizador" class="nav-link">Cotizador</a> -->
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Selector Interactivo de Paletas Corporativas -->
+        <div class="palette-picker" id="palettePicker">
+          <button class="palette-btn" id="paletteBtn" aria-label="Cambiar tema visual"
+            title="Temas visuales">
+            <span class="palette-dot"></span>
+            <span class="palette-label" id="paletteLabel">Studio White</span>
+            <span class="palette-arrow">▾</span>
+          </button>
+          <div class="palette-dropdown" id="paletteDropdown">
+            <button class="palette-option active" data-theme="studio">
+              <span class="palette-swatch" style="background: linear-gradient(135deg, #ffffff 40%, #fe632a 100%);"></span>
+              <div class="palette-opt-info">
+                <span class="palette-opt-title">Studio White</span>
+                <span class="palette-opt-desc">Blanco Editorial & Flame (Oficial)</span>
+              </div>
+            </button>
+            <button class="palette-option" data-theme="warm">
+              <span class="palette-swatch" style="background: linear-gradient(135deg, #fdfbf7 40%, #f05223 100%);"></span>
+              <div class="palette-opt-info">
+                <span class="palette-opt-title">Warm Minimalist</span>
+                <span class="palette-opt-desc">Papel Marfil & Coral Suizo</span>
+              </div>
+            </button>
+            <button class="palette-option" data-theme="titanium">
+              <span class="palette-swatch" style="background: linear-gradient(135deg, #f4f6f9 40%, #e03e1e 100%);"></span>
+              <div class="palette-opt-info">
+                <span class="palette-opt-title">Titanium Light</span>
+                <span class="palette-opt-desc">Gris Platino & Vermilion B2B</span>
+              </div>
+            </button>
+            <button class="palette-option" data-theme="obsidian">
+              <span class="palette-swatch" style="background: linear-gradient(135deg, #090a0d 40%, #fe632a 100%);"></span>
+              <div class="palette-opt-info">
+                <span class="palette-opt-title">Obsidian Dark</span>
+                <span class="palette-opt-desc">Carbón & Modo Noche</span>
+              </div>
+            </button>
+          </div>
+        </div>
+        <!-- 
+        <a href="#contacto" class="btn-primary btn-sm">Hablemos</a> -->
+
+        <!-- Mobile Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú" aria-expanded="false"
+          aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#hero" class="mobile-nav-link">Inicio</a>
+      <a href="#quienes-somos" class="mobile-nav-link">Quiénes Somos</a>
+      <a href="#skills" class="mobile-nav-link">Nuestros Skills</a>
+      <a href="#diferenciales" class="mobile-nav-link">Diferenciales</a>
+      <a href="#portafolio" class="mobile-nav-link">Casos de Éxito</a>
+      <!-- <a href="#cotizador" class="mobile-nav-link">Cotizador</a> -->
+      <a href="#contacto" class="mobile-nav-link cta">Contáctanos →</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========================================================================
+         1. HERO SECTION: PORTADA EDITORIAL & ALTO IMPACTO
+         ======================================================================== -->
+    <section class="home-hero" id="hero" aria-label="Portada Principal CAOZ">
+      <div class="hero-bg-stage">
+        <img src="assets/images/hero-stage.jpg" alt="Producción digital y gaming - CAOZ" class="hero-stage-img">
+        <div class="hero-stage-scrim"></div>
+      </div>
+
+      <div class="container hero-container">
+        <h1 class="hero-headline">
+          <span class="headline-row">HACEMOS QUE</span>
+          <span class="headline-row accent">LO DIGITAL & GAMING</span>
+          <span class="headline-row muted">SUCEDA.</span>
+        </h1>
+
+        <p class="hero-lead">
+          Conectamos marcas líderes con las nuevas audiencias a través de branding digital, creatividad publicitaria,
+          influencer marketing, streaming en vivo, producción audiovisual, gamificación y approach strategy.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#skills" class="btn-primary">Explorar Nuestros Skills</a>
+          <!-- <a href="#cotizador" class="btn-secondary">Simular Estrategia</a> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         2. POSITIONING STATEMENT (QUIÉNES SOMOS)
+         ======================================================================== -->
+    <section class="section-statement" id="quienes-somos" aria-label="Posicionamiento">
+      <div class="container">
+        <div class="statement-content">
+          <span class="eyebrow">Quiénes Somos</span>
+          <h2 class="statement-title">
+            Conectamos marcas globales con la <span class="text-flame">comunidad digital y gamer</span> a través de
+            creatividad disruptiva, branding y experiencias interactivas.
+          </h2>
+          <p class="statement-lead">
+            Operamos como una agencia creativa y consultora estratégica 360°. Desde la concepción de identidad visual y
+            la estrategia de aproximación cultural, hasta campañas con creadores top, transmisiones en vivo y mecánicas
+            de gamificación, construimos valor real y medible para marcas que buscan liderar la cultura contemporánea.
+          </p>
+          <div class="statement-actions">
+            <a href="#skills" class="link-arrow">Descubre nuestros 8 skills clave ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. STATS STRIP (MÉTRICAS CLAVE DE IMPACTO)
+         ======================================================================== -->
+    <section class="section-stats" aria-label="Cifras clave">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-cell">
+            <span class="stat-number stat-count" data-target="150" data-prefix="+">+150</span>
+            <span class="stat-label">Campañas Digitales Lanzadas</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-number stat-count" data-target="48" data-prefix="+" data-suffix="M">+48M</span>
+            <span class="stat-label">Visualizaciones Streaming & Social</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-number stat-count" data-target="80" data-prefix="+">+80</span>
+            <span class="stat-label">Marcas que Confían en LATAM</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-number stat-count" data-target="1800" data-suffix="K">1.8M</span>
+            <span class="stat-label">Audiencia Digital Alcanzada</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-number stat-count" data-target="8" data-suffix=" Skills">8 Skills</span>
+            <span class="stat-label">Disciplinas In-House</span>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-number stat-count" data-target="100" data-suffix="%">100%</span>
+            <span class="stat-label">Engagement Auténtico</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. TRUSTED BRANDS LOGO WALL
+         ======================================================================== -->
+    <section class="section-brands" aria-label="Marcas y Partners">
+      <div class="container">
+        <div class="brands-header">
+          <span class="eyebrow">Confianza Comprobada</span>
+          <h2 class="brands-title">Potenciando marcas líderes en toda <span class="text-flame">LATAM.</span></h2>
+        </div>
+      </div>
+
+      <div class="brands-marquee-wrap">
+        <div class="marquee-strip">
+          <div class="brand-item">RIOT GAMES</div>
+          <div class="brand-item">RAZER</div>
+          <div class="brand-item">LOGITECH G</div>
+          <div class="brand-item">ASUS ROG</div>
+          <div class="brand-item">MONSTER ENERGY</div>
+          <div class="brand-item">SAMSUNG ODYSSEY</div>
+          <div class="brand-item">HYPERX</div>
+          <div class="brand-item">RED BULL</div>
+          <div class="brand-item">INTEL</div>
+          <div class="brand-item">VALORANT CHAMPIONS</div>
+          <!-- Loop Duplication -->
+          <div class="brand-item">RIOT GAMES</div>
+          <div class="brand-item">RAZER</div>
+          <div class="brand-item">LOGITECH G</div>
+          <div class="brand-item">ASUS ROG</div>
+          <div class="brand-item">MONSTER ENERGY</div>
+          <div class="brand-item">SAMSUNG ODYSSEY</div>
+          <div class="brand-item">HYPERX</div>
+          <div class="brand-item">RED BULL</div>
+          <div class="brand-item">INTEL</div>
+          <div class="brand-item">VALORANT CHAMPIONS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. NUESTROS SKILLS (8 DISCIPLINAS OFICIALES)
+         ======================================================================== -->
+    <section class="section-services" id="skills" aria-label="Nuestros Skills">
+      <div class="container">
+        <header class="section-header">
+          <span class="eyebrow">Capacidades Centrales</span>
+          <h2 class="section-heading">Nuestros Skills</h2>
+          <p class="section-subheading">
+            Ocho disciplinas complementarias para diseñar, producir y amplificar campañas que generan conversación y
+            resultados en el ecosistema digital contemporáneo.
+          </p>
+        </header>
+
+        <div class="services-editorial-grid">
+          <!-- 01: Branding Digital -->
+          <article class="service-panel" id="skill-01">
+            <div class="skill-header">
+              <div class="skill-icon-box" title="Branding Digital">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="7"></circle>
+                  <line x1="12" y1="1" x2="12" y2="4"></line>
+                  <line x1="12" y1="20" x2="12" y2="23"></line>
+                  <line x1="1" y1="12" x2="4" y2="12"></line>
+                  <line x1="20" y1="12" x2="23" y2="12"></line>
+                  <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <span class="service-idx">01</span>
+            </div>
+            <h3 class="service-name">Branding Digital</h3>
+            <p class="service-desc">
+              Diseño de identidades visuales de alto impacto, universos gráficos gamer y tech, sistemas de diseño UI/UX
+              y manuales de marca concebidos para destacar en entornos digitales.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Identidad Visual</span>
+              <span class="skill-tag">Diseño UI/UX</span>
+              <span class="skill-tag">Sistemas de Diseño</span>
+            </div>
+          </article>
+
+          <!-- 02: Creatividad -->
+          <article class="service-panel" id="skill-02">
+            <div class="skill-header">
+              <div class="skill-icon-box" title="Creatividad">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+              </div>
+              <span class="service-idx">02</span>
+            </div>
+            <h3 class="service-name">Creatividad</h3>
+            <p class="service-desc">
+              Conceptualización estratégica 360°, narrativa transmedia, redacción publicitaria y activaciones
+              disruptivas que transforman conceptos abstractos en fenómenos de conversación viral.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Campañas 360°</span>
+              <span class="skill-tag">Narrativa Transmedia</span>
+              <span class="skill-tag">Concepto Creativo</span>
+            </div>
+          </article>
+
+          <!-- 03: Marketing Digital -->
+          <article class="service-panel" id="skill-03">
+            <div class="skill-header">
+              <div class="skill-icon-box" title="Marketing Digital">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M4.93 19.07A10 10 0 0 1 2 12a10 10 0 0 1 2.93-7.07"></path>
+                  <path d="M8.46 15.54A5 5 0 0 1 7 12a5 5 0 0 1 1.46-3.54"></path>
+                  <circle cx="12" cy="12" r="2.5" fill="currentColor"></circle>
+                  <path d="M15.54 8.46A5 5 0 0 1 17 12a5 5 0 0 1-1.46 3.54"></path>
+                  <path d="M19.07 4.93A10 10 0 0 1 22 12a10 10 0 0 1-2.93 7.07"></path>
+                </svg>
+              </div>
+              <span class="service-idx">03</span>
+            </div>
+            <h3 class="service-name">Marketing Digital</h3>
+            <p class="service-desc">
+              Estrategias de pauta en Meta, TikTok y Google Ads, rendimiento y conversión, embudos de crecimiento y
+              analítica avanzada para maximizar el retorno de inversión publicitaria.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Medios Pagados</span>
+              <span class="skill-tag">Rendimiento & Conversión</span>
+              <span class="skill-tag">Embudos de Crecimiento</span>
+            </div>
+          </article>
+
+          <!-- 04: Influencer Marketing -->
+          <article class="service-panel" id="skill-04">
+            <div class="skill-header">
+              <div class="skill-icon-box" title="Influencer Marketing">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <span class="service-idx">04</span>
+            </div>
+            <h3 class="service-name">Influencer Marketing</h3>
+            <p class="service-desc">
+              Curaduría, contratación y gestión integral de streamers, gamers y creadores de contenido más influyentes
+              de la región. Negociación directa y auditoría transparente de métricas.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Streamers & Creadores</span>
+              <span class="skill-tag">Curaduría de Talentos</span>
+              <span class="skill-tag">Embajadores de Marca</span>
+            </div>
+          </article>
+
+          <!-- 05: Streaming -->
+          <article class="service-panel" id="skill-05">
+            <div class="skill-header">
+              <div class="skill-icon-box" title="Streaming">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M5 12a7 7 0 0 1 14 0"></path>
+                  <path d="M2 12a10 10 0 0 1 20 0"></path>
+                  <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                  <path d="M12 15v6"></path>
+                  <path d="M8 21h8"></path>
+                </svg>
+              </div>
+              <span class="service-idx">05</span>
+            </div>
+            <h3 class="service-name">Streaming</h3>
+            <p class="service-desc">
+              Producción técnica y creativa de directos para Twitch, Kick y YouTube. Overlays interactivos, switchers
+              multicámara, moderación de comunidad y transmisiones profesionales en vivo.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Twitch & Kick</span>
+              <span class="skill-tag">Transmisión en Vivo</span>
+              <span class="skill-tag">Overlays Interactivos</span>
+            </div>
+          </article>
+
+          <!-- 06: Audiovisual -->
+          <article class="service-panel" id="skill-06">
+            <div class="skill-header">
+              <div class="skill-icon-box" title="Audiovisual">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="4" y1="6" x2="20" y2="6"></line>
+                  <circle cx="9" cy="6" r="3" fill="currentColor"></circle>
+                  <line x1="4" y1="12" x2="20" y2="12"></line>
+                  <circle cx="16" cy="12" r="3" fill="currentColor"></circle>
+                  <line x1="4" y1="18" x2="20" y2="18"></line>
+                  <circle cx="7" cy="18" r="3" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <span class="service-idx">06</span>
+            </div>
+            <h3 class="service-name">Audiovisual</h3>
+            <p class="service-desc">
+              Producción cinematográfica de video comercial, spots para televisión y canales digitales, edición de ritmo
+              vertiginoso para TikTok / Reels / Shorts y motion graphics 2D y 3D.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Spots Publicitarios</span>
+              <span class="skill-tag">TikTok & Reels</span>
+              <span class="skill-tag">Animación 2D y 3D</span>
+            </div>
+          </article>
+
+          <!-- 07: Gamificación -->
+          <article class="service-panel" id="skill-07">
+            <div class="skill-header">
+              <div class="skill-icon-box" title="Gamificación">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+                  <line x1="6" y1="12" x2="10" y2="12"></line>
+                  <line x1="8" y1="10" x2="8" y2="14"></line>
+                  <circle cx="15" cy="13" r="1.2" fill="currentColor"></circle>
+                  <circle cx="18" cy="11" r="1.2" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <span class="service-idx">07</span>
+            </div>
+            <h3 class="service-name">Gamificación</h3>
+            <p class="service-desc">
+              Mecánicas de juego aplicadas al marketing: desafíos interactivos, dinámicas de recompensas, minijuegos
+              web, dinámicas de chat y activaciones lúdicas para fidelizar clientes.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Mecánicas de Juego</span>
+              <span class="skill-tag">Interacción Lúdica</span>
+              <span class="skill-tag">Fidelización de Clientes</span>
+            </div>
+          </article>
+
+          <!-- 08: Approach Strategy -->
+          <article class="service-panel" id="skill-08">
+            <div class="skill-header">
+              <div class="skill-icon-box" title="Approach Strategy">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" fill="currentColor"
+                    fill-opacity="0.2"></path>
+                  <line x1="4" y1="22" x2="4" y2="3"></line>
+                </svg>
+              </div>
+              <span class="service-idx">08</span>
+            </div>
+            <h3 class="service-name">Approach Strategy</h3>
+            <p class="service-desc">
+              Consultoría de desembarco cultural y entrada al territorio gaming para marcas que buscan ingresar a nuevas
+              audiencias con legitimidad, evitando errores de novato y asegurando relevancia genuina.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Entrada a Mercados</span>
+              <span class="skill-tag">Consultoría Estratégica</span>
+              <span class="skill-tag">Conexión Cultural Gen-Z</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. QUÉ NOS HACE DIFERENTES (DIFERENCIALES)
+         ======================================================================== -->
+    <section class="section-diff" id="diferenciales" aria-label="Diferenciales">
+      <div class="container">
+        <header class="section-header">
+          <span class="eyebrow">Qué nos hace diferentes</span>
+          <h2 class="section-heading">
+            Un solo equipo.<br>
+            Un solo estándar.<br>
+            <span class="text-flame">Nativos Digitales & Gaming.</span>
+          </h2>
+          <p class="section-subheading">
+            Hay agencias tradicionales que intentan forzar su entrada al mundo digital y gamer. Nosotros nacimos dentro
+            de internet y de la cultura gaming. Esa legitimidad lo cambia todo.
+          </p>
+        </header>
+
+        <div class="diff-grid">
+          <div class="diff-card">
+            <h3 class="diff-title">ADN Nativo Digital & Gaming</h3>
+            <p class="diff-desc">Conocemos las comunidades de internet, los creadores de contenido, las plataformas de
+              streaming y las dinámicas que encienden a las audiencias jóvenes.</p>
+          </div>
+          <div class="diff-card">
+            <h3 class="diff-title">8 Skills Integrados In-House</h3>
+            <p class="diff-desc">Desde el branding digital y la estrategia de aproximación hasta la producción
+              audiovisual, el influencer marketing y la pauta digital, todo bajo una misma dirección.</p>
+          </div>
+          <div class="diff-card">
+            <h3 class="diff-title">Conexión Real con Creadores</h3>
+            <p class="diff-desc">Trabajamos estrechamente con streamers y creadores de contenido de primer nivel sin
+              intermediarios innecesarios, asegurando colaboraciones genuinas y efectivas.</p>
+          </div>
+          <div class="diff-card">
+            <h3 class="diff-title">Infraestructura Técnica Pro</h3>
+            <p class="diff-desc">Estudios de broadcast, switchers multicámara, herramientas de streaming interactivas y
+              capacidades de producción audiovisual cinematográfica.</p>
+          </div>
+          <div class="diff-card">
+            <h3 class="diff-title">Transparencia Total en Métricas</h3>
+            <p class="diff-desc">Entregamos auditorías reales de visualizaciones, alcance, interacciones y conversiones
+              sin datos inflados ni métricas de vanidad.</p>
+          </div>
+          <div class="diff-card">
+            <h3 class="diff-title">Alianzas a Largo Plazo</h3>
+            <p class="diff-desc">Nuestros clientes renuevan sus campañas proyecto a proyecto gracias al cuidado de la
+              reputación corporativa y al retorno palpable de inversión.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. CASOS DE ÉXITO (PORTAFOLIO DE PROYECTOS)
+         ======================================================================== -->
+    <section class="section-cases" id="portafolio" aria-label="Casos de éxito">
+      <div class="container">
+        <header class="section-header-split">
+          <div>
+            <span class="eyebrow">Casos de Éxito</span>
+            <h2 class="section-heading">Desde el concepto hasta el lanzamiento,<br><span class="text-flame">entregamos
+                resultados reales.</span></h2>
+            <p class="section-subheading">Más de 150 proyectos ejecutados. Revisa cómo aplicamos nuestros skills en
+              iniciativas de alto impacto.</p>
+          </div>
+        </header>
+
+        <!-- Category Filters -->
+        <div class="case-filters">
+          <button class="filter-tab active" data-filter="all">Todos los Casos</button>
+          <button class="filter-tab" data-filter="branding creatividad">Branding & Creatividad</button>
+          <button class="filter-tab" data-filter="influencers streaming">Influencers & Streaming</button>
+          <button class="filter-tab" data-filter="audiovisual gamificacion">Audiovisual & Gamificación</button>
+        </div>
+
+        <div class="cases-editorial-grid">
+          <!-- Case 1: Big Feature -->
+          <article class="case-item feature" data-category="influencers streaming">
+            <div class="case-media">
+              <img src="assets/images/hero-stage.jpg" alt="Gran Final Masters LATAM" loading="lazy">
+              <div class="case-badge">Campaña Integral 360°</div>
+            </div>
+            <div class="case-info">
+              <div class="case-meta">Liga Asociada Riot Games · Final Presencial</div>
+              <h3 class="case-title">Gran Final Masters LATAM</h3>
+              <p class="case-summary">
+                Estrategia integral de lanzamiento regional con más de 20 streamers embajadores, producción de
+                transmisión en directo multicámara y dinamización en redes sociales.
+              </p>
+              <div class="case-result">🔥 45.2K Espectadores Simultáneos en Pico →</div>
+              <button class="btn-case-modal" data-case="masters-latam">Ver Ficha Técnica Completa</button>
+            </div>
+          </article>
+
+          <!-- Case 2 -->
+          <article class="case-item" data-category="audiovisual streaming">
+            <div class="case-media">
+              <img src="assets/images/broadcast-studio.jpg" alt="Control Maestro de Transmisión" loading="lazy">
+              <div class="case-badge">Audiovisual Profesional</div>
+            </div>
+            <div class="case-info">
+              <div class="case-meta">Campaña Digital · Spots Comerciales</div>
+              <h3 class="case-title">Spot Cinemático & Serie Audiovisual</h3>
+              <p class="case-summary">
+                Producción cinematográfica de spot comercial de alta gama y 18 piezas dinámicas para TikTok, Reels y
+                YouTube Shorts con estética gamer de vanguardia.
+              </p>
+              <div class="case-result">🎬 +2.8M Visualizaciones Orgánicas →</div>
+              <button class="btn-case-modal" data-case="broadcast-production">Ver Ficha Técnica Completa</button>
+            </div>
+          </article>
+
+          <!-- Case 3 -->
+          <article class="case-item" data-category="audiovisual gamificacion">
+            <div class="case-media">
+              <img src="assets/images/activation-booth.jpg" alt="Activación Gamificada BTL" loading="lazy">
+              <div class="case-badge">Gamificación BTL</div>
+            </div>
+            <div class="case-info">
+              <div class="case-meta">Feria de Tecnología & Gaming · Experiencial</div>
+              <h3 class="case-title">Nexus Gaming Dome - Activación Gamificada</h3>
+              <p class="case-summary">
+                Diseño y despliegue de una experiencia gamificada inmersiva con mecánicas de recompensas en vivo,
+                minijuegos web para móviles y captación masiva de prospectos.
+              </p>
+              <div class="case-result">👥 +38,000 Participantes Registrados →</div>
+              <button class="btn-case-modal" data-case="arena-activation">Ver Ficha Técnica Completa</button>
+            </div>
+          </article>
+
+          <!-- Case 4: Feature -->
+          <article class="case-item feature" data-category="branding creatividad">
+            <div class="case-media">
+              <img src="assets/images/champions-trophy.jpg" alt="Trofeo y Torneo Regional" loading="lazy">
+              <div class="case-badge">Branding & Estrategia</div>
+            </div>
+            <div class="case-info">
+              <div class="case-meta">Consultoría Estratégica B2B · Desembarco Regional</div>
+              <h3 class="case-title">Rebranding Digital & Approach Strategy</h3>
+              <p class="case-summary">
+                Rediseño completo de la identidad visual digital y consultoría estratégica de desembarco cultural para
+                una marca global en el ecosistema digital de Chile y LATAM.
+              </p>
+              <div class="case-result">🚀 +340% Crecimiento en Conversación →</div>
+              <button class="btn-case-modal" data-case="cup-champions">Ver Ficha Técnica Completa</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         8. COTIZADOR INTERACTIVO DE PROYECTO (8 SKILLS)
+         ======================================================================== -->
+    <!-- <section class="section-calculator" id="cotizador" aria-label="Cotizador de Proyecto">
+      <div class="container">
+        <header class="section-header">
+          <span class="eyebrow">Simulador de Proyecto</span>
+          <h2 class="section-heading">Simula la Estrategia de <span class="text-flame">tu Marca</span></h2>
+          <p class="section-subheading">Selecciona las disciplinas que necesitas y obtén al instante una recomendación técnica y creativa ajustada a tus objetivos.</p>
+        </header>
+
+        <div class="calc-wrapper">
+          <div class="calc-grid">
+            <div class="calc-inputs"> -->
+    <!-- Paso 1 -->
+    <!-- <div class="calc-group">
+                <label class="calc-label">1. Disciplina o Skill Principal</label>
+                <div class="calc-pills">
+                  <button class="pill-btn selected" data-group="type" data-val="Branding Digital & Identidad">🎯 Branding Digital</button>
+                  <button class="pill-btn" data-group="type" data-val="Creatividad Publicitaria 360°">💡 Creatividad 360°</button>
+                  <button class="pill-btn" data-group="type" data-val="Marketing Digital & Rendimiento">📈 Marketing Digital</button>
+                  <button class="pill-btn" data-group="type" data-val="Influencer Marketing & Creadores">👁️ Influencer Marketing</button>
+                  <button class="pill-btn" data-group="type" data-val="Streaming & Transmisión en Vivo">📡 Streaming</button>
+                  <button class="pill-btn" data-group="type" data-val="Producción Audiovisual & Spots">🎬 Audiovisual</button>
+                  <button class="pill-btn" data-group="type" data-val="Estrategia de Gamificación">🎮 Gamificación</button>
+                  <button class="pill-btn" data-group="type" data-val="Approach Strategy & Consultoría">🚩 Approach Strategy</button>
+                </div>
+              </div> -->
+
+    <!-- Paso 2 -->
+    <!-- <div class="calc-group">
+                <label class="calc-label">2. Escala del Proyecto / Cobertura</label>
+                <div class="calc-pills">
+                  <button class="pill-btn" data-group="scale" data-val="Lanzamiento Local (Chile)">🇨🇱 Lanzamiento Local</button>
+                  <button class="pill-btn selected" data-group="scale" data-val="Campaña Regional (LATAM)">🌎 Campaña Regional LATAM</button>
+                  <button class="pill-btn" data-group="scale" data-val="Alianza Anual Continua 360°">⭐ Alianza Anual Continua</button>
+                </div>
+              </div> -->
+
+    <!-- Paso 3 -->
+    <!-- <div class="calc-group">
+                <label class="calc-label">3. Canales Principales de Distribución</label>
+                <div class="calc-pills">
+                  <button class="pill-btn" data-group="stream" data-val="Twitch, Kick & Streaming Pro">📺 Twitch & Kick</button>
+                  <button class="pill-btn" data-group="stream" data-val="TikTok, Reels & Redes Sociales">📱 TikTok & Redes Sociales</button>
+                  <button class="pill-btn selected" data-group="stream" data-val="Ecosistema Multicanal 360°">🌐 Multicanal 360°</button>
+                </div>
+              </div>
+            </div> -->
+
+    <!-- Resumen -->
+    <!-- <div class="calc-summary">
+              <h3 class="summary-head">Especificaciones Seleccionadas</h3>
+              <div class="summary-specs">
+                <div class="spec-row">
+                  <span class="spec-key">Skill Principal:</span>
+                  <span class="spec-val" id="summaryType">Branding Digital & Identidad</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Escala:</span>
+                  <span class="spec-val" id="summaryScale">Campaña Regional (LATAM)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-key">Distribución:</span>
+                  <span class="spec-val" id="summaryStream">Ecosistema Multicanal 360°</span>
+                </div>
+              </div>
+
+              <div class="tier-box">
+                <div class="tier-sub">Configuración Recomendada</div>
+                <div class="tier-val" id="summaryTier">PAQUETE INTEGRAL 360°</div>
+              </div>
+
+              <button class="btn-primary" id="btnApplyEstimateToForm" style="width: 100%;">
+                Transferir a Cotización →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ========================================================================
+         9. CTA FINAL & FORMULARIO DE CONTACTO
+         ======================================================================== -->
+    <!-- <section class="section-contact" id="contacto" aria-label="Contacto">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-statement">
+            <span class="eyebrow">Contacto</span>
+            <h2 class="contact-headline">
+              ¿Hablamos de tu<br>próximo proyecto?
+            </h2>
+            <p class="contact-lead">
+              Cuéntanos tu proyecto, campaña o desafío de marca. Diseñamos una estrategia a medida integrando nuestros 8 skills y te respondemos en menos de 24 horas.
+            </p>
+
+            <div class="contact-direct-links">
+              <a href="mailto:contacto@caoz.gg" class="direct-link">contacto@caoz.gg</a>
+              <a href="tel:+56912345678" class="direct-link phone">+56 9 1234 5678</a>
+            </div>
+
+            <div class="contact-location-tag">
+              Santiago de Chile · Cobertura en toda la región LATAM
+            </div>
+          </div>
+
+          <div class="contact-form-wrap">
+            <form id="contactForm" class="agency-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="contactName">Nombre Completo *</label>
+                  <input type="text" id="contactName" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-field">
+                  <label for="contactEmail">Correo Corporativo *</label>
+                  <input type="email" id="contactEmail" placeholder="nombre@empresa.com" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="contactCompany">Empresa / Marca</label>
+                  <input type="text" id="contactCompany" placeholder="Nombre de la marca">
+                </div>
+                <div class="form-field">
+                  <label for="serviceSelect">Skill o Servicio Principal *</label>
+                  <select id="serviceSelect" required>
+                    <option value="branding">Branding Digital & Identidad Visual</option>
+                    <option value="creatividad">Creatividad Publicitaria & Campañas 360°</option>
+                    <option value="marketing">Marketing Digital & Rendimiento Publicitario</option>
+                    <option value="influencer">Influencer Marketing & Creadores Top</option>
+                    <option value="streaming">Streaming & Transmisión en Vivo</option>
+                    <option value="audiovisual">Producción Audiovisual & Spots de Video</option>
+                    <option value="gamificacion">Gamificación & Experiencias Lúdicas</option>
+                    <option value="approach">Approach Strategy & Consultoría de Desembarco</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="contactMessage">Detalles del Proyecto *</label>
+                <textarea id="contactMessage" placeholder="Cuéntanos objetivos de la campaña, público objetivo, fechas tentativas o requerimientos especiales..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%;">
+                Enviar Solicitud de Proyecto
+              </button>
+
+              <div class="form-feedback" id="formSuccess"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main> -->
+
+    <!-- ========================================================================
+       MODAL DE CASO DE ESTUDIO (FICHA TÉCNICA)
+       ======================================================================== -->
+    <div class="modal-backdrop" id="caseStudyModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-dialog">
+        <button class="modal-close" id="modalCloseBtn" aria-label="Cerrar ventana">&times;</button>
+        <div class="modal-media">
+          <img src="assets/images/hero-stage.jpg" alt="Caso de Estudio" id="modalImage">
+        </div>
+        <div class="modal-body">
+          <span class="eyebrow" id="modalCategory">CATEGORÍA</span>
+          <div class="modal-client" id="modalClient">CLIENTE</div>
+          <h2 class="modal-title" id="modalTitle">Título del Proyecto</h2>
+
+          <div class="modal-stats" id="modalStats">
+            <!-- Populated by JS -->
+          </div>
+
+          <h3 class="modal-sub">Descripción del Proyecto</h3>
+          <p class="modal-desc" id="modalDesc"></p>
+
+          <h3 class="modal-sub">El Desafío Técnico</h3>
+          <p class="modal-desc" id="modalChallenge"></p>
+
+          <h3 class="modal-sub">Nuestra Solución & Resultados</h3>
+          <p class="modal-desc" id="modalSolution"></p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
