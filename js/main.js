@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CAOZ - INTERACCIONES JAVASCRIPT
+   INTERACCIONES JAVASCRIPT
    Modal de Casos, Filtros, Simulador de Presupuesto y Selector de Paleta
    ========================================================================== */
 
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (msgField) {
-        msgField.value = `Hola equipo de CAOZ! Me gustaría cotizar un proyecto con las siguientes especificaciones:
+        msgField.value = `Hola! Me gustaría cotizar un proyecto con las siguientes especificaciones:
 - Disciplina Principal: ${calcState.type}
 - Cobertura / Escala: ${calcState.scale}
 - Canales de Distribución: ${calcState.stream}
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       document.body.setAttribute('data-theme', theme);
     }
-    localStorage.setItem('caoz_theme', theme);
+    localStorage.setItem('site_theme', theme);
 
     if (paletteLabel) {
       paletteLabel.textContent = themes[theme];
@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Default to studio white (clean professional light theme)
-  let savedTheme = localStorage.getItem('caoz_theme');
+  let savedTheme = localStorage.getItem('site_theme');
   if (!savedTheme || savedTheme === 'obsidian' || !themes[savedTheme]) {
     savedTheme = 'studio';
   }

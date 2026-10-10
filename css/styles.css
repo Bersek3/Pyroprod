@@ -861,6 +861,7 @@ body {
   color: var(--text-pure);
   line-height: 1;
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .stat-label {
@@ -873,65 +874,6 @@ body {
   line-height: 1.4;
 }
 
-/* ==========================================================================
-   4. MARCAS / PARTNERS
-   ========================================================================== */
-.section-brands {
-  padding: 90px 0 60px;
-  background: var(--bg-surface);
-}
-
-.brands-header {
-  margin-bottom: 40px;
-}
-
-.brands-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--text-pure);
-  letter-spacing: 0.01em;
-}
-
-.brands-marquee-wrap {
-  overflow: hidden;
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 24px 0;
-  position: relative;
-  background: #ffffff;
-}
-
-.marquee-strip {
-  display: flex;
-  gap: 60px;
-  width: max-content;
-  animation: brandsScroll 35s linear infinite;
-  align-items: center;
-}
-
-.marquee-strip:hover {
-  animation-play-state: paused;
-}
-
-@keyframes brandsScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.brand-item {
-  font-family: var(--font-mono);
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #64748b;
-  transition: color var(--duration-fast);
-}
-
-.brand-item:hover {
-  color: var(--text-pure);
-}
 
 /* ==========================================================================
    5. NUESTROS SKILLS & CAPACIDADES (8 CORE PILLARS)
@@ -1706,17 +1648,7 @@ body[data-theme="obsidian"] .hero-kicker {
   background: rgba(255, 255, 255, 0.04);
 }
 
-body[data-theme="obsidian"] .brand-item {
-  color: var(--text-tertiary);
-}
 
-body[data-theme="obsidian"] .brand-item:hover {
-  color: var(--text-pure);
-}
-
-body[data-theme="obsidian"] .brands-marquee-wrap {
-  background: transparent;
-}
 
 body[data-theme="obsidian"] .skill-tag {
   background: rgba(255, 255, 255, 0.03);
