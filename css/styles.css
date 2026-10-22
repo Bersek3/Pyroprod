@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 /* ==========================================================================
    AUTHENTIC MCR AGENCY TYPOGRAPHY: TUSKER GROTESK + PLUS JAKARTA SANS
    Tusker Grotesk: Heavy, condensed, tall poster grotesque (never squashed)
@@ -28,7 +30,7 @@
   font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 
 :root {
   /* ==========================================================================
@@ -729,7 +731,7 @@ body {
 .hero-stage-scrim {
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse 65% 55% at 88% 20%, rgba(254, 99, 42, 0.08) 0%, transparent 60%),
     radial-gradient(ellipse 50% 45% at 10% 80%, rgba(221, 47, 34, 0.04) 0%, transparent 60%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.95) 75%, var(--bg-deep) 100%);
@@ -1957,3 +1959,61 @@ body[data-theme="obsidian"] .modal-stats {
     grid-column: span 1;
   }
 }
+
+/* Pyroprod: focused production identity and accessible navigation. */
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid #b53213; outline-offset: 5px; }
+section[id], main[id] { scroll-margin-top: 110px; }
+.skip-link { position: fixed; top: 12px; left: 12px; z-index: 9999; padding: 12px 20px; background: #171922; color: white; transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
+.brand-period { color: var(--accent-primary); }
+.site-header { top: 0; }
+.nav-links { gap: clamp(12px, 1.6vw, 24px); }
+.nav-projects { font-weight: 700; font-size: .85rem; color: var(--text-pure); white-space: nowrap; padding: 10px 0; border-bottom: 2px solid var(--accent-primary); }
+.hero-kicker { letter-spacing: .1em; font-size: .7rem; }
+.hero-headline { font-size: clamp(3.25rem, 9vw, 7.2rem); }
+.hero-stage-img { opacity: .14; }
+.hero-lead { max-width: 650px; }
+.hero-bottom-note { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border-medium); font-family: var(--font-mono); font-size: .75rem; color: var(--text-secondary); }
+.section-audience { padding: 80px 0; background: var(--bg-deep); }
+.audience-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
+.audience-card { padding: clamp(24px,4vw,48px); border: 1px solid var(--border-medium); background: var(--bg-surface); border-radius: 8px; display: flex; flex-direction: column; align-items: flex-start; }
+.audience-card h3 { font-size: clamp(1.8rem,3vw,2.6rem); line-height: 1.1; letter-spacing: -.04em; margin: 20px 0; }
+.audience-card p { color: var(--text-secondary); margin-bottom: 28px; max-width: 440px; }
+.audience-card .link-arrow { margin-top: auto; }
+.services-editorial-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.service-mark { color: var(--accent-primary-deep); font-size: 2rem; }
+.process-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 28px; }
+.process-step { padding-top: 22px; border-top: 2px solid var(--border-medium); }
+.process-number { font-family: var(--font-display); font-size: 2.5rem; color: var(--accent-primary-deep); }
+.process-step h3 { margin: 16px 0 12px; font-size: 1.15rem; }
+.process-step p { color: var(--text-secondary); font-size: .95rem; }
+.roster-overlay { opacity: 1; transform: none; }
+.site-footer { border-top: 1px solid var(--border-medium); padding: 40px 0; background: var(--bg-surface); }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.site-footer p { color: var(--text-secondary); font-size: .85rem; }
+@media (max-width: 1100px) { .nav-links { display: none; } .mobile-toggle { display: flex; } }
+@media (max-width: 900px) { .process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 600px) {
+  .audience-grid, .services-editorial-grid, .process-grid { grid-template-columns: minmax(0,1fr); }
+  .nav-projects { display: none; }
+  .home-hero { min-height: auto; padding: 64px 0; }
+  .hero-headline { font-size: clamp(2.6rem,12vw,4.2rem); }
+  .hero-cta-row > a { width: 100%; text-align: center; }
+  .hero-kicker { font-size: .6rem; letter-spacing: .04em; }
+  .hero-bottom-note { gap: 10px; flex-direction: column; }
+  .modal-body { padding: 24px; }
+  .modal-stats { grid-template-columns: 1fr; }
+  .roster-role-wrap { flex-wrap: wrap; }
+  .footer-inner { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+.nav-container { position: relative; z-index: 1001; }
+.mobile-nav { position: absolute; top: 100%; max-height: calc(100dvh - 80px); overflow-y: auto; visibility: hidden; }
+.mobile-nav.open { visibility: visible; }
+.mobile-backdrop { position: absolute; top: 100%; bottom: auto; height: 100dvh; }

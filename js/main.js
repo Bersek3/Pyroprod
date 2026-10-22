@@ -1,39 +1,4 @@
-/* ==========================================================================
-   INTERACCIONES JAVASCRIPT
-   Modal de Casos, Filtros, Simulador de Presupuesto y Selector de Paleta
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. MOBILE MENU DRAWER
-  const mobileToggle = document.getElementById('mobileToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  const mobileBackdrop = document.getElementById('mobileBackdrop');
-
-  const toggleMobileNav = () => {
-    const isOpen = mobileNav.classList.toggle('open');
-    mobileBackdrop.classList.toggle('open', isOpen);
-    mobileToggle.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  };
-
-  const closeMobileNav = () => {
-    mobileNav.classList.remove('open');
-    mobileBackdrop.classList.remove('open');
-    mobileToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
-
-  if (mobileToggle && mobileNav) {
-    mobileToggle.addEventListener('click', toggleMobileNav);
-  }
-  if (mobileBackdrop) {
-    mobileBackdrop.addEventListener('click', closeMobileNav);
-  }
-  document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    link.addEventListener('click', closeMobileNav);
-  });
-
-  // 3. DATOS DE CASOS DE ÉXITO & MODAL
   const caseStudies = {
     'masters-latam': {
       title: 'Gran Final Masters LATAM 2025',
@@ -93,283 +58,133 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const modalBackdrop = document.getElementById('caseStudyModal');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-  const openModalButtons = document.querySelectorAll('.btn-case-modal');
 
-  const openModal = (id) => {
-    const data = caseStudies[id];
-    if (!data || !modalBackdrop) return;
-
-    document.getElementById('modalImage').src = data.image;
-    document.getElementById('modalCategory').textContent = data.category;
-    document.getElementById('modalClient').textContent = 'Cliente: ' + data.client;
-    document.getElementById('modalTitle').textContent = data.title;
-    document.getElementById('modalDesc').textContent = data.description;
-    document.getElementById('modalChallenge').textContent = data.challenge;
-    document.getElementById('modalSolution').textContent = data.solution;
-
-    const statsContainer = document.getElementById('modalStats');
-    statsContainer.innerHTML = '';
-    data.stats.forEach(stat => {
-      const col = document.createElement('div');
-      col.className = 'modal-stat-col';
-      col.innerHTML = `
-        <div class="m-stat-val">${stat.val}</div>
-        <div class="m-stat-lbl">${stat.lbl}</div>
-      `;
-      statsContainer.appendChild(col);
-    });
-
-    modalBackdrop.classList.add('active');
-    modalBackdrop.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeModal = () => {
-    if (!modalBackdrop) return;
-    modalBackdrop.classList.remove('active');
-    modalBackdrop.setAttribute('aria-hidden', 'true');
+  const main = document.getElementById('main');
+  const header = document.getElementById('siteHeader');
+  const footer = document.querySelector('.site-footer');
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('mobileNav');
+  const backdrop = document.getElementById('mobileBackdrop');
+  const modal = document.getElementById('caseStudyModal');
+  const closeButton = document.getElementById('modalCloseBtn');
+  let modalTrigger = null;
+  const backgroundInert = (value) => { main.inert = value; footer.inert = value; };
+  const closeMenu = (restoreFocus = false) => {
+    menu.classList.remove('open');
+    backdrop.classList.remove('open');
+    menu.inert = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menú');
+    backgroundInert(false);
     document.body.style.overflow = '';
+    if (restoreFocus) toggle.focus();
   };
-
-  openModalButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const studyId = btn.getAttribute('data-case');
-      openModal(studyId);
+  toggle.addEventListener('click', () => {
+    if (menu.classList.contains('open')) return closeMenu(true);
+    menu.inert = false;
+    menu.classList.add('open');
+    backdrop.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Cerrar menú');
+    backgroundInert(true);
+    document.body.style.overflow = 'hidden';
+    menu.querySelector('a').focus();
+  });
+  backdrop.addEventListener('click', () => closeMenu(true));
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    closeMenu();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) { target.tabIndex = -1; target.focus({ preventScroll: true }); }
+  }));
+  matchMedia('(min-width: 1101px)').addEventListener('change', event => {
+    if (event.matches && menu.classList.contains('open')) closeMenu();
+  });
+  const closeModal = () => {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    modal.inert = true;
+    header.inert = false;
+    backgroundInert(false);
+    document.body.style.overflow = '';
+    if (modalTrigger) modalTrigger.focus();
+  };
+  modal.inert = true;
+  document.querySelectorAll('.btn-case-modal').forEach(button => {
+    button.addEventListener('click', () => {
+      const project = caseStudies[button.dataset.case];
+      if (!project) return;
+      modalTrigger = button;
+      const image = document.getElementById('modalImage');
+      image.src = project.image;
+      image.alt = project.title;
+      const fields = { modalCategory: project.category, modalClient: 'Cliente: ' + project.client, modalTitle: project.title, modalDesc: project.description, modalChallenge: project.challenge, modalSolution: project.solution };
+      Object.entries(fields).forEach(([id, value]) => { document.getElementById(id).textContent = value; });
+      const stats = document.getElementById('modalStats');
+      stats.replaceChildren(...project.stats.map(stat => {
+        const col = document.createElement('div');
+        col.className = 'modal-stat-col';
+        const value = document.createElement('div'); value.className = 'm-stat-val'; value.textContent = stat.val;
+        const label = document.createElement('div'); label.className = 'm-stat-lbl'; label.textContent = stat.lbl;
+        col.append(value, label); return col;
+      }));
+      modal.inert = false;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      backgroundInert(true); header.inert = true;
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.modal-dialog').scrollTop = 0;
+      closeButton.focus();
     });
   });
-
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener('click', (e) => {
-      if (e.target === modalBackdrop) closeModal();
-    });
-  }
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) closeModal();
+  closeButton.addEventListener('click', closeModal);
+  modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+  document.addEventListener('keydown', event => {
+    const modalOpen = modal.classList.contains('active');
+    const menuOpen = menu.classList.contains('open');
+    if (event.key === 'Escape') {
+      if (modalOpen) closeModal();
+      else if (menuOpen) closeMenu(true);
+    }
+    if (event.key !== 'Tab' || (!modalOpen && !menuOpen)) return;
+    const focusables = modalOpen ? [...modal.querySelectorAll('button, a[href], [tabindex="0"]')] : [toggle, ...menu.querySelectorAll('a[href]')];
+    const first = focusables[0], last = focusables[focusables.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
   });
-
-  // 4. PORTFOLIO FILTER
-  const filterTabs = document.querySelectorAll('.filter-tab');
-  const caseItems = document.querySelectorAll('.case-item');
-
-  filterTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      filterTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      const filter = tab.getAttribute('data-filter');
-      caseItems.forEach(item => {
-        const cat = item.getAttribute('data-category');
-        if (filter === 'all' || cat.includes(filter)) {
-          item.style.display = item.classList.contains('feature') ? 'grid' : 'flex';
-          setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-          }, 20);
-        } else {
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(10px)';
-          setTimeout(() => {
-            item.style.display = 'none';
-          }, 200);
-        }
+  const filters = [...document.querySelectorAll('.filter-tab')];
+  const items = [...document.querySelectorAll('.case-item')];
+  filters.forEach(button => {
+    button.setAttribute('aria-pressed', String(button.classList.contains('active')));
+    button.addEventListener('click', () => {
+      filters.forEach(filter => {
+        const selected = filter === button;
+        filter.classList.toggle('active', selected);
+        filter.setAttribute('aria-pressed', String(selected));
       });
+      const selected = button.dataset.filter.split(/\s+/);
+      let count = 0;
+      items.forEach(item => {
+        const categories = item.dataset.category.split(/\s+/);
+        item.hidden = button.dataset.filter !== 'all' && !selected.some(category => categories.includes(category));
+        if (!item.hidden) count++;
+      });
+      document.getElementById('filterStatus').textContent = count + (count === 1 ? ' proyecto disponible' : ' proyectos disponibles');
     });
   });
-
-  // 5. METRICS COUNTER OBSERVER
-  const statNumbers = document.querySelectorAll('.stat-count');
-  let counted = false;
-
-  const startCounters = () => {
-    statNumbers.forEach(elem => {
-      const target = parseInt(elem.getAttribute('data-target'), 10);
-      const prefix = elem.getAttribute('data-prefix') || '';
-      const suffix = elem.getAttribute('data-suffix') || '';
-      let current = 0;
-      const step = Math.max(1, Math.ceil(target / 35));
-
-      const timer = setInterval(() => {
-        current += step;
-        if (current >= target) {
-          elem.textContent = prefix + target.toLocaleString() + suffix;
-          clearInterval(timer);
-        } else {
-          elem.textContent = prefix + current.toLocaleString() + suffix;
-        }
-      }, 35);
-    });
-  };
-
-  const statsSection = document.querySelector('.section-stats');
-  if (statsSection) {
-    const observer = new IntersectionObserver((entries) => {
+  const links = [...document.querySelectorAll('.nav-link')];
+  const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !counted) {
-          counted = true;
-          startCounters();
-        }
+        if (!entry.isIntersecting) return;
+        links.forEach(link => {
+          const active = link.getAttribute('href') === '#' + entry.target.id;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
       });
-    }, { threshold: 0.25 });
-    observer.observe(statsSection);
-  }
-
-  // 6. SIMULADOR DE PROYECTO
-  const calcState = {
-    type: 'Branding Digital & Identidad',
-    scale: 'Campaña Regional (LATAM)',
-    stream: 'Ecosistema Multicanal 360°'
-  };
-
-  const pillButtons = document.querySelectorAll('.pill-btn');
-  const summaryType = document.getElementById('summaryType');
-  const summaryScale = document.getElementById('summaryScale');
-  const summaryStream = document.getElementById('summaryStream');
-  const summaryTier = document.getElementById('summaryTier');
-
-  const updateCalculatorUI = () => {
-    if (summaryType) summaryType.textContent = calcState.type;
-    if (summaryScale) summaryScale.textContent = calcState.scale;
-    if (summaryStream) summaryStream.textContent = calcState.stream;
-
-    let tier = 'PAQUETE ESTRATEGIA & LANZAMIENTO';
-    if (calcState.scale.includes('Regional') || calcState.stream.includes('360°')) {
-      tier = 'PAQUETE INTEGRAL 360°';
-    } else if (calcState.scale.includes('Anual') || calcState.scale.includes('Alianza')) {
-      tier = 'ALIANZA ANUAL CONTINUA';
-    }
-    if (summaryTier) summaryTier.textContent = tier;
-  };
-
-  pillButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const group = btn.getAttribute('data-group');
-      const val = btn.getAttribute('data-val');
-
-      document.querySelectorAll(`.pill-btn[data-group="${group}"]`).forEach(b => {
-        b.classList.remove('selected');
-      });
-      btn.classList.add('selected');
-
-      if (group === 'type') calcState.type = val;
-      if (group === 'scale') calcState.scale = val;
-      if (group === 'stream') calcState.stream = val;
-
-      updateCalculatorUI();
-    });
-  });
-
-  // Transferir a formulario
-  const btnApply = document.getElementById('btnApplyEstimateToForm');
-  if (btnApply) {
-    btnApply.addEventListener('click', () => {
-      const msgField = document.getElementById('contactMessage');
-      const serviceSelect = document.getElementById('serviceSelect');
-
-      if (serviceSelect) {
-        if (calcState.type.includes('Branding')) serviceSelect.value = 'branding';
-        else if (calcState.type.includes('Creatividad')) serviceSelect.value = 'creatividad';
-        else if (calcState.type.includes('Marketing')) serviceSelect.value = 'marketing';
-        else if (calcState.type.includes('Influencer')) serviceSelect.value = 'influencer';
-        else if (calcState.type.includes('Streaming')) serviceSelect.value = 'streaming';
-        else if (calcState.type.includes('Audiovisual')) serviceSelect.value = 'audiovisual';
-        else if (calcState.type.includes('Gamificación')) serviceSelect.value = 'gamificacion';
-        else if (calcState.type.includes('Approach')) serviceSelect.value = 'approach';
-      }
-
-      if (msgField) {
-        msgField.value = `Hola! Me gustaría cotizar un proyecto con las siguientes especificaciones:
-- Disciplina Principal: ${calcState.type}
-- Cobertura / Escala: ${calcState.scale}
-- Canales de Distribución: ${calcState.stream}
-- Configuración Sugerida: ${summaryTier ? summaryTier.textContent : 'PAQUETE INTEGRAL 360°'}`;
-      }
-
-      const contactSec = document.getElementById('contacto');
-      if (contactSec) contactSec.scrollIntoView({ behavior: 'smooth' });
-    });
-  }
-
-  // 7. FORM SUBMISSION
-  const contactForm = document.getElementById('contactForm');
-  const formSuccess = document.getElementById('formSuccess');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('contactName').value;
-      const email = document.getElementById('contactEmail').value;
-
-      if (!name || !email) return;
-
-      if (formSuccess) {
-        formSuccess.style.display = 'block';
-        formSuccess.innerHTML = `<strong>¡Solicitud enviada!</strong> Nos pondremos en contacto contigo en breve para preparar la propuesta.`;
-      }
-      contactForm.reset();
-    });
-  }
-
-  // 8. CORPORATE PALETTE THEME SWITCHER
-  const palettePicker = document.getElementById('palettePicker');
-  const paletteBtn = document.getElementById('paletteBtn');
-  const paletteLabel = document.getElementById('paletteLabel');
-  const paletteOptions = document.querySelectorAll('.palette-option');
-
-  const themes = {
-    studio: 'Studio White',
-    warm: 'Warm Minimalist',
-    titanium: 'Titanium Light',
-    obsidian: 'Obsidian Dark'
-  };
-
-  const setTheme = (theme) => {
-    if (!themes[theme]) theme = 'studio';
-    if (theme === 'studio') {
-      document.body.removeAttribute('data-theme');
-    } else {
-      document.body.setAttribute('data-theme', theme);
-    }
-    localStorage.setItem('site_theme', theme);
-
-    if (paletteLabel) {
-      paletteLabel.textContent = themes[theme];
-    }
-
-    paletteOptions.forEach(opt => {
-      opt.classList.toggle('active', opt.getAttribute('data-theme') === theme);
-    });
-  };
-
-  // Default to studio white (clean professional light theme)
-  let savedTheme = localStorage.getItem('site_theme');
-  if (!savedTheme || savedTheme === 'obsidian' || !themes[savedTheme]) {
-    savedTheme = 'studio';
-  }
-  setTheme(savedTheme);
-
-  if (paletteBtn && palettePicker) {
-    paletteBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      palettePicker.classList.toggle('open');
-    });
-
-    paletteOptions.forEach(opt => {
-      opt.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const theme = opt.getAttribute('data-theme');
-        setTheme(theme);
-        palettePicker.classList.remove('open');
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!palettePicker.contains(e.target)) {
-        palettePicker.classList.remove('open');
-      }
-    });
+    }, { rootMargin: '-15% 0px -65% 0px', threshold: 0 });
+    sections.forEach(section => observer.observe(section));
   }
 });
