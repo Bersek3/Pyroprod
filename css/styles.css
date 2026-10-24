@@ -33,6 +33,7 @@
 
 
 :root {
+  color-scheme: light;
   /* ==========================================================================
      PALETTE 1: STUDIO WHITE & FLAME (Default - Official White Editorial)
      Crisp pristine white, deep obsidian typography, and vibrant brand flame.
@@ -159,8 +160,9 @@ body[data-theme="titanium"],
    PALETTE 4: OBSIDIAN FLAME (Classic Nocturnal / Dark Mode)
    Deep carbon obsidian with glowing flame
    ========================================================================== */
-body[data-theme="obsidian"],
-[data-theme="obsidian"] {
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
   --bg-deep: #090a0d;
   --bg-surface: #111317;
   --bg-surface-elevated: #181a20;
@@ -169,7 +171,7 @@ body[data-theme="obsidian"],
 
   --accent-primary: #fe632a;
   --accent-primary-light: #ff7843;
-  --accent-primary-deep: #dd2f22;
+  --accent-primary-deep: #ff7843;
   --accent-primary-dim: rgba(254, 99, 42, 0.12);
   --accent-primary-glow: rgba(254, 99, 42, 0.28);
   --accent-gradient: linear-gradient(135deg, #fe632a 0%, #f04b21 52%, #dd2f22 100%);
@@ -178,7 +180,7 @@ body[data-theme="obsidian"],
   --text-pure: #ffffff;
   --text-primary: #f4f5f7;
   --text-secondary: #9da4b0;
-  --text-tertiary: #6b7280;
+  --text-tertiary: #a4abb8;
 
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-medium: rgba(255, 255, 255, 0.15);
@@ -188,6 +190,7 @@ body[data-theme="obsidian"],
   --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
   --shadow-card-hover: 0 16px 36px -8px rgba(0, 0, 0, 0.85);
   --shadow-modal: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+  }
 }
 
 /* ==========================================================================
@@ -919,7 +922,7 @@ body {
 
 .service-panel:hover,
 .service-panel.highlighted {
-  background: #ffffff;
+  background: var(--bg-card-hover);
   border-color: var(--border-accent);
   transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
@@ -1616,82 +1619,114 @@ body {
 /* ==========================================================================
    DARK THEME OVERRIDES (OBSIDIAN NOCTURNAL)
    ========================================================================== */
-body[data-theme="obsidian"] .btn-primary {
+@media (prefers-color-scheme: dark) {
+.btn-primary {
   background: #ffffff;
   color: #0a0a0c;
   border-color: #ffffff;
 }
+}
 
-body[data-theme="obsidian"] .btn-primary:hover {
+@media (prefers-color-scheme: dark) {
+.btn-primary:hover {
   background: var(--accent-gradient);
   border-color: var(--accent-primary-deep);
   color: #ffffff;
 }
-
-body[data-theme="obsidian"] .site-header {
-  background: rgba(10, 10, 12, 0.92);
 }
 
-body[data-theme="obsidian"] .hero-stage-img {
+@media (prefers-color-scheme: dark) {
+.site-header {
+  background: rgba(10, 10, 12, 0.92);
+}
+}
+
+@media (prefers-color-scheme: dark) {
+.hero-stage-img {
   filter: brightness(0.18) contrast(1.15);
   opacity: 1;
   mix-blend-mode: normal;
 }
+}
 
-body[data-theme="obsidian"] .hero-stage-scrim {
+@media (prefers-color-scheme: dark) {
+.hero-stage-scrim {
   background: linear-gradient(180deg, rgba(10, 10, 12, 0.6) 0%, rgba(10, 10, 12, 0.95) 85%, #0a0a0c 100%);
 }
+}
 
-body[data-theme="obsidian"] .headline-row.muted {
+@media (prefers-color-scheme: dark) {
+.headline-row.muted {
   color: rgba(255, 255, 255, 0.35);
 }
+}
 
-body[data-theme="obsidian"] .hero-kicker {
+@media (prefers-color-scheme: dark) {
+.hero-kicker {
   background: rgba(255, 255, 255, 0.04);
+}
 }
 
 
 
-body[data-theme="obsidian"] .skill-tag {
+@media (prefers-color-scheme: dark) {
+.skill-tag {
   background: rgba(255, 255, 255, 0.03);
   color: var(--text-tertiary);
 }
+}
 
-body[data-theme="obsidian"] .filter-tab.active {
+@media (prefers-color-scheme: dark) {
+.filter-tab.active {
   background: #ffffff;
   color: #0a0a0c;
   border-color: #ffffff;
 }
+}
 
-body[data-theme="obsidian"] .case-badge {
+@media (prefers-color-scheme: dark) {
+.case-badge {
   background: rgba(10, 10, 12, 0.85);
   color: var(--text-primary);
   border: 1px solid var(--border-medium);
 }
+}
 
-body[data-theme="obsidian"] .palette-btn {
+@media (prefers-color-scheme: dark) {
+.palette-btn {
   background: rgba(255, 255, 255, 0.04);
 }
+}
 
-body[data-theme="obsidian"] .palette-dropdown {
+@media (prefers-color-scheme: dark) {
+.palette-dropdown {
   background: var(--bg-surface-elevated);
 }
+}
 
-body[data-theme="obsidian"] .modal-backdrop {
+@media (prefers-color-scheme: dark) {
+.modal-backdrop {
   background: rgba(0, 0, 0, 0.85);
 }
-
-body[data-theme="obsidian"] .modal-dialog {
-  background: var(--bg-surface);
 }
 
-body[data-theme="obsidian"] .modal-close {
+@media (prefers-color-scheme: dark) {
+.modal-dialog {
+  background: var(--bg-surface);
+}
+}
+
+@media (prefers-color-scheme: dark) {
+.modal-close {
   background: rgba(10, 10, 12, 0.7);
   color: #ffffff;
 }
+}
 
-body[data-theme="obsidian"] .modal-stats {
+@media (prefers-color-scheme: dark) {
+.modal-stats {
   background: var(--bg-card);
+}
 }
 
 .modal-stat-col .m-stat-lbl {
@@ -1719,207 +1754,10 @@ body[data-theme="obsidian"] .modal-stats {
 /* ==========================================================================
    ROSTER DE LA AGENCIA (TALENTO & EQUIPO)
    ========================================================================== */
-.section-roster {
-  padding: 120px 0;
-  background: var(--bg-surface);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  position: relative;
-}
-
-.roster-header-meta {
-  display: flex;
-  align-items: center;
-}
-
-.roster-badge-count {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--accent-primary);
-  background: var(--accent-primary-dim);
-  border: 1px solid var(--border-accent);
-  padding: 6px 14px;
-  border-radius: 999px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.roster-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 50px;
-}
-
-.roster-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform var(--duration-normal) var(--ease-out),
-              box-shadow var(--duration-normal) var(--ease-out),
-              border-color var(--duration-normal) var(--ease-out);
-  display: flex;
-  flex-direction: column;
-}
-
-.roster-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--border-accent);
-  box-shadow: var(--shadow-card-hover);
-}
-
-.roster-media {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: var(--bg-surface);
-}
-
-.roster-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-}
-
-.roster-card:hover .roster-media img {
-  transform: scale(1.05);
-}
-
-.roster-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: rgba(9, 10, 15, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 4px 10px;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  z-index: 2;
-}
-
-.roster-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 16px 14px 12px;
-  background: linear-gradient(180deg, transparent 0%, rgba(9, 10, 15, 0.85) 100%);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out);
-  z-index: 2;
-}
-
-.roster-card:hover .roster-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.roster-tag {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 600;
-  background: rgba(254, 99, 42, 0.25);
-  color: #ffffff;
-  border: 1px solid rgba(254, 99, 42, 0.5);
-  padding: 2px 8px;
-  border-radius: 4px;
-  letter-spacing: 0.04em;
-}
-
-.roster-info {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.roster-role-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-.roster-role {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--accent-primary);
-  letter-spacing: 0.05em;
-}
-
-.roster-dept {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.roster-name {
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--text-pure);
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-
-.roster-bio {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.55;
-  margin-bottom: 18px;
-  flex-grow: 1;
-}
-
-.roster-links {
-  display: flex;
-  gap: 12px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.roster-link-item {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  cursor: pointer;
-  letter-spacing: 0.03em;
-  transition: color var(--duration-fast) var(--ease-out);
-}
-
-.roster-link-item:hover {
-  color: var(--accent-primary);
-}
-
 /* ==========================================================================
    RESPONSIVENESS (MOBILE BREAKPOINTS)
    ========================================================================== */
 @media (max-width: 1024px) {
-  .roster-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .stats-grid {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 32px;
@@ -1951,7 +1789,6 @@ body[data-theme="obsidian"] .modal-stats {
   .services-editorial-grid,
   .diff-grid,
   .cases-editorial-grid,
-  .roster-grid,
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -1988,7 +1825,6 @@ section[id], main[id] { scroll-margin-top: 110px; }
 .process-number { font-family: var(--font-display); font-size: 2.5rem; color: var(--accent-primary-deep); }
 .process-step h3 { margin: 16px 0 12px; font-size: 1.15rem; }
 .process-step p { color: var(--text-secondary); font-size: .95rem; }
-.roster-overlay { opacity: 1; transform: none; }
 .site-footer { border-top: 1px solid var(--border-medium); padding: 40px 0; background: var(--bg-surface); }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
 .site-footer p { color: var(--text-secondary); font-size: .85rem; }
@@ -2004,7 +1840,6 @@ section[id], main[id] { scroll-margin-top: 110px; }
   .hero-bottom-note { gap: 10px; flex-direction: column; }
   .modal-body { padding: 24px; }
   .modal-stats { grid-template-columns: 1fr; }
-  .roster-role-wrap { flex-wrap: wrap; }
   .footer-inner { align-items: flex-start; flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2025,3 +1860,12 @@ section[id], main[id] { scroll-margin-top: 110px; }
 .nav-links { gap: 12px; }
 .nav-link { font-size: .75rem; white-space: nowrap; }
 @media (max-width: 1280px) { .nav-links { display: none; } .mobile-toggle { display: flex; } }
+
+/* System appearance also covers navigation, controls, and photo overlays. */
+@media (prefers-color-scheme: dark) {
+  .mobile-nav, .filter-tab { background: var(--bg-surface-elevated); }
+  .filter-tab.active { background: var(--text-pure); color: var(--bg-deep); }
+  .btn-secondary { background: var(--bg-surface); }
+  .hero-stage-img { opacity: 1; }
+  :focus-visible { outline-color: var(--accent-primary-light); }
+}
