@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = document.querySelector(link.getAttribute('href'));
     if (target) { target.tabIndex = -1; target.focus({ preventScroll: true }); }
   }));
-  matchMedia('(min-width: 1101px)').addEventListener('change', event => {
+  matchMedia('(min-width: 1281px)').addEventListener('change', event => {
     if (event.matches && menu.classList.contains('open')) closeMenu();
   });
   const closeModal = () => {
@@ -167,6 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const categories = item.dataset.category.split(/\s+/);
         item.hidden = button.dataset.filter !== 'all' && !selected.some(category => categories.includes(category));
         if (!item.hidden) count++;
+      });
+      document.querySelectorAll('.project-group').forEach(group => {
+        group.hidden = ![...group.querySelectorAll('.case-item')].some(item => !item.hidden);
       });
       document.getElementById('filterStatus').textContent = count + (count === 1 ? ' proyecto disponible' : ' proyectos disponibles');
     });

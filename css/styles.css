@@ -2017,3 +2017,11 @@ section[id], main[id] { scroll-margin-top: 110px; }
 .mobile-nav { position: absolute; top: 100%; max-height: calc(100dvh - 80px); overflow-y: auto; visibility: hidden; }
 .mobile-nav.open { visibility: visible; }
 .mobile-backdrop { position: absolute; top: 100%; bottom: auto; height: 100dvh; }
+
+/* Photo groups within projects and results. */
+.project-group + .project-group { margin-top: 56px; }
+.project-group-title { font-size: clamp(1.3rem, 3vw, 1.9rem); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-medium); }
+.section-contact { background: var(--bg-surface); }
+.nav-links { gap: 12px; }
+.nav-link { font-size: .75rem; white-space: nowrap; }
+@media (max-width: 1280px) { .nav-links { display: none; } .mobile-toggle { display: flex; } }
