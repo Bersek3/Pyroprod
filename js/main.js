@@ -23,6 +23,13 @@
   window.matchMedia('(min-width: 1101px)').addEventListener('change', closeMenu);
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
+  document.querySelectorAll('.offering-link[data-service]').forEach(link => {
+    link.addEventListener('click', () => {
+      const option = Array.from(form.querySelectorAll('[name="servicios"]'))
+        .find(input => input.value === link.dataset.service);
+      if (option) option.checked = true;
+    });
+  });
   form.addEventListener('submit', event => {
     event.preventDefault();
     const data = new FormData(form);
