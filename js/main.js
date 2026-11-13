@@ -20,7 +20,7 @@
       toggle.focus();
     }
   });
-  window.matchMedia('(min-width: 851px)').addEventListener('change', closeMenu);
+  window.matchMedia('(min-width: 1101px)').addEventListener('change', closeMenu);
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
   form.addEventListener('submit', event => {
