@@ -2208,3 +2208,41 @@ html, body { color-scheme: light dark; background: var(--bg-deep); color: var(--
 
 /* The process now starts directly with the image sequence. */
 .section-process { padding-top: 0; }
+
+/* Keep horizontal wordmarks legible alongside compact brand symbols. */
+.brand-logo-track { animation-duration: 100s; }
+.brand-logo-item img { width: 112px; max-width: 112px; height: 50px; object-fit: contain; filter: grayscale(1); }
+@media (prefers-color-scheme: dark) { .brand-logo-item img { filter: grayscale(1) invert(1); } }
+@media (max-width: 600px) { .brand-logo-item img { width: 88px; max-width: 88px; height: 42px; } }
+.brand-logo-item img[src$="/monsterenergy.svg"] { filter: grayscale(1) brightness(.35); }
+@media (prefers-color-scheme: dark) { .brand-logo-item img[src$="/monsterenergy.svg"] { filter: grayscale(1); } }
+
+/* Optical sizing: wordmarks need more width than standalone symbols. */
+.brand-logo-item { width: 166px; height: 100px; padding: 8px 12px; }
+.brand-logo-item img { width: 126px; max-width: 126px; height: 64px; opacity: .9; }
+.brand-logo-item--wide { width: 208px; }
+.brand-logo-item--wide img { width: 178px; max-width: 178px; height: 70px; }
+.brand-logo-item--tall img { width: 84px; max-width: 84px; height: 84px; }
+@media (prefers-color-scheme: dark) { .brand-logo-item img { opacity: .95; } }
+@media (max-width: 600px) {
+  .brand-logo-item { width: 142px; height: 84px; padding: 6px 10px; }
+  .brand-logo-item img { width: 110px; max-width: 110px; height: 54px; }
+  .brand-logo-item--wide { width: 182px; }
+  .brand-logo-item--wide img { width: 154px; max-width: 154px; height: 60px; }
+  .brand-logo-item--tall img { width: 70px; max-width: 70px; height: 70px; }
+}
+
+/* Brand-specific optical sizes also compensate for whitespace inside square SVGs. */
+.brand-logo-item { overflow: hidden; }
+.brand-logo-item img,
+.brand-logo-item--wide img,
+.brand-logo-item--tall img { width: var(--logo-width,112px); max-width: none; height: var(--logo-height,56px); object-fit: contain; }
+@media (max-width: 600px) {
+  .brand-logo-item img,
+  .brand-logo-item--wide img,
+  .brand-logo-item--tall img { width: var(--logo-width,112px); max-width: none; height: var(--logo-height,56px); transform: scale(.86); }
+}
+
+/* Uniform slots after trimming SVG whitespace; brand sizes refer to visible artwork. */
+.brand-logo-item, .brand-logo-item--wide { width: 160px; height: 84px; }
+@media (max-width: 600px) { .brand-logo-item, .brand-logo-item--wide { width: 140px; height: 74px; } }
