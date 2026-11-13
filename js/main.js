@@ -20,7 +20,37 @@
       toggle.focus();
     }
   });
-  window.matchMedia('(min-width: 1101px)').addEventListener('change', closeMenu);
+  window.matchMedia('(min-width: 1351px)').addEventListener('change', closeMenu);
+  // Animate the native disclosure without moving the toggle off its center.
+  document.querySelectorAll('.offering-details').forEach(details => {
+    const summary = details.querySelector('summary');
+    let animation;
+    let expanded = details.open;
+    summary.addEventListener('click', event => {
+      if (!details.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      event.preventDefault();
+      const startHeight = details.getBoundingClientRect().height;
+      if (animation) animation.cancel();
+      expanded = !expanded;
+      details.open = true;
+      details.dataset.expanded = String(expanded);
+      const endHeight = expanded ? details.getBoundingClientRect().height : summary.getBoundingClientRect().height;
+      details.style.overflow = 'hidden';
+      animation = details.animate(
+        [{ height: startHeight + 'px' }, { height: endHeight + 'px' }],
+        { duration: 280, easing: 'cubic-bezier(.22,1,.36,1)' }
+      );
+      animation.onfinish = () => {
+        details.open = expanded;
+        details.style.overflow = '';
+        delete details.dataset.expanded;
+        animation = null;
+      };
+    });
+    details.addEventListener('toggle', () => {
+      if (!animation) expanded = details.open;
+    });
+  });
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
   document.querySelectorAll('.offering-link[data-service]').forEach(link => {

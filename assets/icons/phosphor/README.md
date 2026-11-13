@@ -9,3 +9,5 @@ Five duotone SVG icons from https://github.com/phosphor-icons/core, distributed 
 - palette: design and branding
 
 Each service uses an image inside `.offering-media`. To use photography later, replace the icon image with an image using the `offering-photo` class, as indicated in the HTML comments.
+
+Social icons: instagram-logo, tiktok-logo and linkedin-logo (duotone), from the same Phosphor source and MIT license.

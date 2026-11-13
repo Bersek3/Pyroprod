@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "impeccable": "^4.1.0"
+  },
+  "scripts": {
+    "start": "node scripts/local-server.cjs",
+    "dev": "node scripts/local-server.cjs"
   }
 }

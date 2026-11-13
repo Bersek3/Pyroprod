@@ -4,407 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pyro Producciones | Marketing · Publicidad · Producción</title>
-<meta name="description" content="Transformamos ideas en proyectos, experiencias y resultados. Agencia integral de marketing, publicidad y producción en Chile y México.">
-<meta name="theme-color" content="#ffffff">
+<meta name="description" content="En Pyro Producciones transformamos ideas en proyectos, experiencias y resultados.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101115" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/images/logo-symbol.png">
+<link rel="preload" href="assets/images/logo-symbol.png" as="image">
+<style>
+#pageLoader{display:none;position:fixed;inset:0;z-index:10000;place-items:center;background:#fff;color:#171922;opacity:1;transition:opacity .35s ease,visibility .35s ease}
+html.is-loading #pageLoader{display:grid}
+#pageLoader.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
+.loader-content{text-align:center}
+.loader-logo{position:relative;display:block;width:90px;height:128px;margin:0 auto 24px;filter:drop-shadow(0 0 1px rgba(65,65,65,.4))}
+.loader-logo::before,.loader-logo::after{content:'';position:absolute;inset:0;-webkit-mask:url('assets/images/logo-symbol.png') center/contain no-repeat;mask:url('assets/images/logo-symbol.png') center/contain no-repeat}
+.loader-logo::before{background:#fff}
+.loader-logo::after{background:linear-gradient(160deg,#fe632a,#f04b21 65%,#dd2f22);clip-path:inset(0 100% 0 0);animation:loaderLogoFill 1.3s ease-in-out infinite alternate}
+@keyframes loaderLogoFill{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+#pageLoader.is-leaving .loader-logo::after{animation:none;clip-path:inset(0 0 0 0)}
+.loader-name{display:block;font:800 24px/1.1 Arial,sans-serif;letter-spacing:.05em}.loader-name small{display:block;font-size:9px;letter-spacing:.25em;margin-top:7px}
+@media(prefers-color-scheme:dark){#pageLoader{background:#101115;color:#f5f3f0}}
+@media(prefers-reduced-motion:reduce){#pageLoader{transition:none}.loader-logo::after{animation:none;clip-path:inset(0 0 0 0)}}
+</style>
+<script src="js/loader.js"></script>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<div id="pageLoader" role="status" aria-label="Cargando Pyro Producciones"><div class="loader-content"><span class="loader-logo" aria-hidden="true"></span><span class="loader-name">PYRO<small>PRODUCCIONES</small></span></div></div>
 <a class="skip-link" href="#main">Saltar al contenido</a>
-<header class="site-header">
-<div class="container nav-container">
-<a class="brand-logo" href="#hero" aria-label="Pyro Producciones, inicio">
-<img src="assets/images/logo-symbol.png" alt="" class="brand-logo-img">
-<span class="brand-logo-text">PYROPROD<span class="brand-period">.</span>
-</span>
-</a>
+<header class="site-header"><div class="container nav-container">
+<a class="brand-logo" href="#hero" aria-label="Pyro Producciones, inicio"><img src="assets/images/logo-symbol.png" alt="" class="brand-logo-img"><span class="brand-logo-text">PYRO<span class="brand-logo-subtitle">PRODUCCIONES</span></span></a>
 <button id="mobileToggle" aria-controls="navigation" aria-expanded="false" aria-label="Abrir menú">Menú +</button>
 <nav class="restored-navigation" id="navigation" aria-label="Navegación principal">
 <a href="#hero">Inicio</a>
 <a href="#quienes-somos">Quiénes somos</a>
-<a href="#skills">Servicios</a>
-<a href="#portafolio">Proyectos</a>
+<a href="#skills">Nuestros servicios</a>
+<a href="#portafolio">Proyectos y resultados</a>
 <a href="#diferenciales">Cómo trabajamos</a>
-<a href="#proximos-eventos">Eventos</a>
-<a href="#fundadores">Fundadores</a>
-<a class="nav-contact" href="#contacto">Hablemos ↗</a>
-</nav>
-</div>
-</header>
+<a href="#proximos-eventos">Próximos eventos y torneos</a>
+<a href="#fundadores">Nuestros fundadores</a>
+<a href="#contacto" class="nav-contact">Redes sociales y contacto</a>
+</nav></div></header>
 <main id="main">
-<section class="home-hero" id="hero" aria-label="Inicio">
-<div class="hero-bg-stage">
-<img src="assets/images/hero-stage.jpg" alt="" class="hero-stage-img" fetchpriority="high">
-<div class="hero-stage-scrim">
-</div>
-</div>
+<section class="home-hero cinematic-hero" id="hero" aria-label="Inicio — Bienvenida">
+<div class="hero-bg-stage"><img src="assets/images/hero-stage.jpg" alt="" class="hero-stage-img" data-parallax="0.12" fetchpriority="high"><div class="hero-stage-scrim"></div></div>
 <div class="container hero-container">
+
 <p class="hero-kicker">MARKETING · PUBLICIDAD · PRODUCCIÓN</p>
-<h1 class="hero-headline">
-<span class="headline-row">TU IDEA ES EL</span>
-<span class="headline-row">PUNTO DE PARTIDA.</span>
-<span class="headline-row accent">HACEMOS QUE SUCEDA.</span>
-</h1>
-<p class="hero-lead">Transformamos ideas en proyectos, experiencias y resultados. Combinamos estrategia, creatividad y producción para llevar tu proyecto de principio a fin.</p>
-<div class="hero-cta-row">
-<a class="btn-primary" href="#skills">Conoce nuestros servicios ↗</a>
-<a class="btn-secondary" href="#contacto">Hablemos de tu proyecto ↗</a>
-</div>
-<div class="hero-bottom-note">
-<span>CHILE · MÉXICO</span>
-<span>Tu idea es el punto de partida. Nosotros hacemos que suceda.</span>
-</div>
-</div>
-</section>
-<section id="quienes-somos" class="section section-statement">
-<div class="container split">
-<div>
-<p class="eyebrow">01 / QUIÉNES SOMOS</p>
-<h2 class="section-heading">Dos trayectorias.<br>Una visión<br>
-<em class="text-flame">compartida.</em>
-</h2>
-</div>
-<div class="body-copy">
-<p class="lead">Creamos proyectos que generan experiencias, conectan con las personas y entregan resultados.</p>
+<h1 class="hero-headline"><span class="headline-row">Tu idea es el punto de partida.</span> <span class="headline-row">Nosotros hacemos que suceda.</span></h1>
+<div class="hero-document-copy"><p class="hero-lead">En Pyro Producciones transformamos ideas en proyectos, experiencias y resultados.</p>
+<p class="hero-document-paragraph">Somos una agencia de marketing, publicidad y producción especializada en desarrollar soluciones creativas para marcas, empresas y organizaciones. Combinamos estrategia, creatividad y experiencia en terreno para llevar cada proyecto desde su concepción hasta su ejecución.</p>
+<p class="hero-document-paragraph">Trabajamos en Chile y México, desarrollando proyectos de distintas dimensiones y adaptándonos a las necesidades de cada cliente.</p></div>
+<div class="hero-cta-row"><a class="btn-primary" href="#skills">Conoce nuestros servicios</a><a class="btn-secondary" href="#contacto">Hablemos de tu proyecto</a></div>
+<div class="hero-bottom-note"><span>Chile · México</span></div>
+</div></section>
+<section id="quienes-somos" class="section section-statement" aria-labelledby="about-title"><div class="container split"><div><h2 class="section-heading" id="about-title">Quiénes somos</h2></div><div class="body-copy"><p class="lead">Nacemos de la unión de dos trayectorias y una visión compartida: crear proyectos que generen experiencias, conecten con las personas y entreguen resultados.</p>
 <p>Somos una agencia de marketing, publicidad y producción que integra creatividad, planificación y ejecución para desarrollar soluciones a medida.</p>
-<p>Nuestro equipo multidisciplinario reúne producción general, coordinación, diseño y audiovisual. Complementamos nuestros equipos según los requerimientos de cada proyecto.</p>
-<p>Comprendemos las necesidades comerciales de las marcas y las expectativas de su público. No creemos en soluciones genéricas: cada proyecto tiene sus propios objetivos.</p>
-<div class="territories">DESDE CHILE Y MÉXICO, PARA TU PRÓXIMO DESAFÍO.</div>
-</div>
-</div>
-</section>
-<section id="skills" class="section section-services services-showcase" aria-labelledby="services-title">
-  <div class="container">
-    <p class="eyebrow">02 / NUESTROS SERVICIOS</p>
-    <div class="section-intro">
-      <h2 class="section-heading" id="services-title">Una idea.<br><em class="text-flame">Todas las posibilidades.</em></h2>
-    </div>
-    <div class="services-showcase-grid">
-      <article class="offering">
-        <div class="offering-media">
-          <!-- Imagen futura: sustituir el icono por <img class="offering-photo" src="assets/images/tu-imagen.jpg" alt="Descripción de la imagen" loading="lazy" width="800" height="450"> -->
-          <img class="offering-icon" src="assets/icons/phosphor/megaphone.svg" alt="" loading="lazy" width="80" height="80">
-          <span class="offering-number" aria-hidden="true">01</span>
-        </div>
-        <div class="offering-content">
-          <h3>Marketing y publicidad</h3>
-          <p class="offering-benefit">Haz que tu marca conecte.</p>
-          <details class="offering-details">
-            <summary><span class="offering-more">Ver más</span><span class="offering-less">Ver menos</span><span class="offering-toggle" aria-hidden="true">+</span></summary>
-            <div class="offering-expanded">
-              <p class="offering-description">Estrategias y campañas que acercan tu marca a las personas correctas.</p>
-              <ul><li>Estrategia y campañas publicitarias</li><li>Influencer marketing</li><li>Contenido para redes sociales</li></ul>
-              <a class="offering-link" href="#contacto" data-service="Marketing y campañas publicitarias" aria-label="Consultar por marketing y publicidad">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
-            </div>
-          </details>
-        </div>
-      </article>
-      <article class="offering">
-        <div class="offering-media">
-          <!-- Imagen futura: sustituir el icono por <img class="offering-photo" src="assets/images/tu-imagen.jpg" alt="Descripción de la imagen" loading="lazy" width="800" height="450"> -->
-          <img class="offering-icon" src="assets/icons/phosphor/sparkle.svg" alt="" loading="lazy" width="80" height="80">
-          <span class="offering-number" aria-hidden="true">02</span>
-        </div>
-        <div class="offering-content">
-          <h3>Activaciones de marca</h3>
-          <p class="offering-benefit">Deja una impresión que se viva.</p>
-          <details class="offering-details">
-            <summary><span class="offering-more">Ver más</span><span class="offering-less">Ver menos</span><span class="offering-toggle" aria-hidden="true">+</span></summary>
-            <div class="offering-expanded">
-              <p class="offering-description">Experiencias que invitan a participar y convierten una marca en un encuentro.</p>
-              <ul><li>Activaciones y experiencias BTL</li><li>Acciones comerciales y promocionales</li><li>Interacción con tu audiencia</li></ul>
-              <a class="offering-link" href="#contacto" data-service="Activaciones de marca" aria-label="Consultar por activaciones de marca">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
-            </div>
-          </details>
-        </div>
-      </article>
-      <article class="offering">
-        <div class="offering-media">
-          <!-- Imagen futura: sustituir el icono por <img class="offering-photo" src="assets/images/tu-imagen.jpg" alt="Descripción de la imagen" loading="lazy" width="800" height="450"> -->
-          <img class="offering-icon" src="assets/icons/phosphor/calendar-star.svg" alt="" loading="lazy" width="80" height="80">
-          <span class="offering-number" aria-hidden="true">03</span>
-        </div>
-        <div class="offering-content">
-          <h3>Eventos y producción</h3>
-          <p class="offering-benefit">Tu evento, de principio a fin.</p>
-          <details class="offering-details">
-            <summary><span class="offering-more">Ver más</span><span class="offering-less">Ver menos</span><span class="offering-toggle" aria-hidden="true">+</span></summary>
-            <div class="offering-expanded">
-              <p class="offering-description">Planificación y coordinación para que cada parte de tu evento funcione.</p>
-              <ul><li>Eventos corporativos</li><li>Torneos gaming y eSports</li><li>Producción y coordinación general</li></ul>
-              <a class="offering-link" href="#contacto" data-service="Eventos y producciones" aria-label="Consultar por eventos y producción">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
-            </div>
-          </details>
-        </div>
-      </article>
-      <article class="offering">
-        <div class="offering-media">
-          <!-- Imagen futura: sustituir el icono por <img class="offering-photo" src="assets/images/tu-imagen.jpg" alt="Descripción de la imagen" loading="lazy" width="800" height="450"> -->
-          <img class="offering-icon" src="assets/icons/phosphor/film-slate.svg" alt="" loading="lazy" width="80" height="80">
-          <span class="offering-number" aria-hidden="true">04</span>
-        </div>
-        <div class="offering-content">
-          <h3>Producción audiovisual</h3>
-          <p class="offering-benefit">Ideas que se ven y se escuchan.</p>
-          <details class="offering-details">
-            <summary><span class="offering-more">Ver más</span><span class="offering-less">Ver menos</span><span class="offering-toggle" aria-hidden="true">+</span></summary>
-            <div class="offering-expanded">
-              <p class="offering-description">Contenido y transmisiones que llevan tu proyecto a la pantalla.</p>
-              <ul><li>Fotografía y video</li><li>Streaming y transmisiones en vivo</li><li>Equipamiento técnico</li></ul>
-              <a class="offering-link" href="#contacto" data-service="Producción audiovisual" aria-label="Consultar por producción audiovisual">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
-            </div>
-          </details>
-        </div>
-      </article>
-      <article class="offering">
-        <div class="offering-media">
-          <!-- Imagen futura: sustituir el icono por <img class="offering-photo" src="assets/images/tu-imagen.jpg" alt="Descripción de la imagen" loading="lazy" width="800" height="450"> -->
-          <img class="offering-icon" src="assets/icons/phosphor/palette.svg" alt="" loading="lazy" width="80" height="80">
-          <span class="offering-number" aria-hidden="true">05</span>
-        </div>
-        <div class="offering-content">
-          <h3>Diseño y branding</h3>
-          <p class="offering-benefit">Una identidad que se reconoce.</p>
-          <details class="offering-details">
-            <summary><span class="offering-more">Ver más</span><span class="offering-less">Ver menos</span><span class="offering-toggle" aria-hidden="true">+</span></summary>
-            <div class="offering-expanded">
-              <p class="offering-description">Diseño con personalidad para comunicar lo que hace única a tu marca.</p>
-              <ul><li>Diseño gráfico</li><li>Identidad visual y branding</li><li>Piezas publicitarias</li></ul>
-              <a class="offering-link" href="#contacto" data-service="Otros proyectos" aria-label="Consultar por diseño y branding">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
-            </div>
-          </details>
-        </div>
-      </article>
-    </div>
-    <div class="services-help"><div><strong>¿Tu idea combina varios servicios?</strong><p>Armamos un equipo y una propuesta a tu medida.</p></div><a class="btn-primary" href="#contacto">Cuéntanos tu idea <span aria-hidden="true">↗</span></a></div>
-  </div>
-</section>
-<section id="portafolio" class="section section-cases">
-<div class="container">
-<p class="eyebrow">03 / PROYECTOS Y RESULTADOS</p>
-<div class="section-intro">
-<h2 class="section-heading">Experiencia<br>que toma <em class="text-flame">forma.</em>
-</h2>
-<p>Una trayectoria que cruza industrias, formatos y escenarios. Estos son algunos de los proyectos de nuestra experiencia histórica.</p>
-</div>
+<p>Contamos con un equipo multidisciplinario que abarca producción general, coordinación, diseño, audiovisual y otras áreas especializadas, complementando nuestros equipos según los requerimientos de cada proyecto.</p>
+<p>Nuestra experiencia nos permite comprender tanto las necesidades comerciales de las marcas como las expectativas del público al que buscan llegar.</p>
+<p>No creemos en soluciones genéricas. Cada proyecto tiene sus propios objetivos y nuestra misión es encontrar la mejor manera de hacerlos realidad.</p></div></div></section>
+<section id="skills" class="section section-services services-showcase" aria-labelledby="services-title"><div class="container">
+
+<div class="section-intro"><h2 class="section-heading" id="services-title">Soluciones integrales para transformar ideas en experiencias.</h2><p>Desarrollamos proyectos a medida, ofreciendo servicios individuales o soluciones integrales según las necesidades de cada cliente.</p></div>
+<div class="services-showcase-grid">
+<article class="offering"><div class="offering-media">
+<!-- Imagen futura: sustituir el icono por una foto con la clase offering-photo. -->
+<img class="offering-icon" src="assets/icons/phosphor/megaphone.svg" alt="" loading="lazy" width="46" height="46"><span class="offering-number" aria-hidden="true">01</span></div>
+<div class="offering-content"><h3>Marketing y publicidad</h3><details class="offering-details"><summary><span class="offering-more">Ver más</span><span class="offering-less">Ver menos</span><span class="offering-toggle" aria-hidden="true"></span></summary><div class="offering-expanded"><p class="offering-description">Diseñamos y desarrollamos estrategias de marketing y campañas publicitarias orientadas a conectar marcas con sus audiencias.</p><ul><li>Campañas con marcas y empresas</li><li>Estrategias de marketing y publicidad</li><li>Influencer marketing y colaboraciones con creadores</li><li>Creación de contenido para redes sociales</li></ul><a class="offering-link" href="#contacto" data-service="Marketing y campañas publicitarias" aria-label="Consultar por marketing y publicidad">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a></div></details></div></article>
+<article class="offering"><div class="offering-media">
+<!-- Imagen futura: sustituir el icono por una foto con la clase offering-photo. -->
+<img class="offering-icon" src="assets/icons/phosphor/sparkle.svg" alt="" loading="lazy" width="46" height="46"><span class="offering-number" aria-hidden="true">02</span></div>
+<div class="offering-content"><h3>Activaciones y experiencias de marca</h3><details class="offering-details"><summary><span class="offering-more">Ver más</span><span class="offering-less">Ver menos</span><span class="offering-toggle" aria-hidden="true"></span></summary><div class="offering-expanded"><p class="offering-description">Creamos experiencias que permiten a las marcas conectar directamente con sus consumidores, generar interacción y fortalecer su presencia.</p><ul><li>Activaciones de marca</li><li>Experiencias BTL</li><li>Experiencias comerciales y promocionales</li></ul><a class="offering-link" href="#contacto" data-service="Activaciones de marca" aria-label="Consultar por activaciones y experiencias de marca">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a></div></details></div></article>
+<article class="offering"><div class="offering-media">
+<!-- Imagen futura: sustituir el icono por una foto con la clase offering-photo. -->
+<img class="offering-icon" src="assets/icons/phosphor/calendar-star.svg" alt="" loading="lazy" width="46" height="46"><span class="offering-number" aria-hidden="true">03</span></div>
+<div class="offering-content"><h3>Eventos y producción</h3><details class="offering-details"><summary><span class="offering-more">Ver más</span><span class="offering-less">Ver menos</span><span class="offering-toggle" aria-hidden="true"></span></summary><div class="offering-expanded"><p class="offering-description">Planificamos, organizamos y producimos eventos de diferentes escalas, coordinando cada etapa para garantizar una ejecución profesional.</p><ul><li>Organización y producción de eventos</li><li>Eventos corporativos</li><li>Torneos gaming y eSports</li><li>Producción y coordinación general</li></ul><a class="offering-link" href="#contacto" data-service="Cotización de eventos y producciones" aria-label="Consultar por eventos y producción">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a></div></details></div></article>
+<article class="offering"><div class="offering-media">
+<!-- Imagen futura: sustituir el icono por una foto con la clase offering-photo. -->
+<img class="offering-icon" src="assets/icons/phosphor/film-slate.svg" alt="" loading="lazy" width="46" height="46"><span class="offering-number" aria-hidden="true">04</span></div>
+<div class="offering-content"><h3>Producción audiovisual</h3><details class="offering-details"><summary><span class="offering-more">Ver más</span><span class="offering-less">Ver menos</span><span class="offering-toggle" aria-hidden="true"></span></summary><div class="offering-expanded"><p class="offering-description">Desarrollamos contenido y soluciones audiovisuales para marcas, eventos y proyectos digitales.</p><ul><li>Producción audiovisual</li><li>Fotografía y video</li><li>Streaming y transmisiones en vivo</li><li>Gestión de equipamiento técnico</li></ul><a class="offering-link" href="#contacto" data-service="Producción audiovisual" aria-label="Consultar por producción audiovisual">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a></div></details></div></article>
+<article class="offering"><div class="offering-media">
+<!-- Imagen futura: sustituir el icono por una foto con la clase offering-photo. -->
+<img class="offering-icon" src="assets/icons/phosphor/palette.svg" alt="" loading="lazy" width="46" height="46"><span class="offering-number" aria-hidden="true">05</span></div>
+<div class="offering-content"><h3>Diseño y branding</h3><details class="offering-details"><summary><span class="offering-more">Ver más</span><span class="offering-less">Ver menos</span><span class="offering-toggle" aria-hidden="true"></span></summary><div class="offering-expanded"><p class="offering-description">Construimos identidades visuales y recursos gráficos que permiten comunicar de manera efectiva la personalidad de cada marca o proyecto.</p><ul><li>Diseño gráfico</li><li>Desarrollo de identidad visual</li><li>Branding</li><li>Piezas publicitarias y gráficas</li></ul><a class="offering-link" href="#contacto" data-service="Otros proyectos" aria-label="Consultar por diseño y branding">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a></div></details></div></article>
+</div></div></section>
+<section id="portafolio" class="section section-cases" aria-labelledby="projects-title"><div class="container">
+<div class="section-intro"><h2 class="section-heading" id="projects-title">Experiencia que se transforma en resultados.</h2><p>Nuestro portafolio refleja la diversidad de proyectos que hemos desarrollado y nuestra capacidad para trabajar en distintas industrias, formatos y escenarios.</p></div>
+<h3 class="content-subheading">Proyectos destacados</h3>
 <div class="cases-editorial-grid">
-<article class="case-item">
-<div class="case-info">
-<div class="case-meta">01 / Influencers y entretenimiento</div>
-<h3 class="case-title">Teletón Gamers por Chile</h3>
-<p class="case-summary">Gestión de influencers y participación en iniciativas de entretenimiento y gaming vinculadas a Teletón.</p>
+<article class="case-item cinematic-project"><div class="case-media"><img src="assets/images/hero-stage.jpg" alt="Imagen referencial de producción y experiencias gaming" loading="lazy" width="1376" height="768"><div class="project-image-shade"></div><h4 class="case-title">Teletón Gamers por Chile</h4><span class="project-image-label">IMAGEN REFERENCIAL</span></div><div class="case-info"><p class="case-summary">Gestión de influencers y participación en iniciativas de entretenimiento y gaming vinculadas a Teletón.</p></div></article>
+<article class="case-item cinematic-project"><div class="case-media"><img src="assets/images/champions-trophy.jpg" alt="Imagen referencial de producción y experiencias gaming" loading="lazy" width="1376" height="768"><div class="project-image-shade"></div><h4 class="case-title">Festigames 2024 – Arena eSports</h4><span class="project-image-label">IMAGEN REFERENCIAL</span></div><div class="case-info"><p class="case-summary">Experiencia y participación en el entorno de producción de competencias y entretenimiento gaming.</p></div></article>
+<article class="case-item cinematic-project"><div class="case-media"><img src="assets/images/activation-booth.jpg" alt="Imagen referencial de producción y experiencias gaming" loading="lazy" width="1376" height="768"><div class="project-image-shade"></div><h4 class="case-title">Expogame 2026 – Jugabet</h4><span class="project-image-label">IMAGEN REFERENCIAL</span></div><div class="case-info"><p class="case-summary">Producción de stands y experiencias de marca dentro del evento.</p></div></article>
+<article class="case-item cinematic-project"><div class="case-media"><img src="assets/images/activation-booth.jpg" alt="Imagen referencial de producción y experiencias gaming" loading="lazy" width="1376" height="768"><div class="project-image-shade"></div><h4 class="case-title">HyperX – Juega como quieras</h4><span class="project-image-label">IMAGEN REFERENCIAL</span></div><div class="case-info"><p class="case-summary">Gestión de influencers y coordinación de piso durante la activación.</p></div></article>
+<article class="case-item cinematic-project"><div class="case-media"><img src="assets/images/champions-trophy.jpg" alt="Imagen referencial de producción y experiencias gaming" loading="lazy" width="1376" height="768"><div class="project-image-shade"></div><h4 class="case-title">Torneos de Fortnite</h4><span class="project-image-label">IMAGEN REFERENCIAL</span></div><div class="case-info"><p class="case-summary">Organización de competencias online y presenciales, convocatoria de participantes y animación.</p></div></article>
+<article class="case-item cinematic-project"><div class="case-media"><img src="assets/images/broadcast-studio.jpg" alt="Imagen referencial de producción y experiencias gaming" loading="lazy" width="1376" height="768"><div class="project-image-shade"></div><h4 class="case-title">Red Bull Gaming Ground – Minecraft</h4><span class="project-image-label">IMAGEN REFERENCIAL</span></div><div class="case-info"><p class="case-summary">Desarrollo de un mapa personalizado de Minecraft bajo la modalidad Juegos del Hambre, junto con la producción de un evento presencial.</p></div></article>
+<article class="case-item cinematic-project"><div class="case-media"><img src="assets/images/broadcast-studio.jpg" alt="Imagen referencial de producción y experiencias gaming" loading="lazy" width="1376" height="768"><div class="project-image-shade"></div><h4 class="case-title">BancoEstado – Anomalía Halloween</h4><span class="project-image-label">IMAGEN REFERENCIAL</span></div><div class="case-info"><p class="case-summary">Desarrollo de un mapa personalizado de Minecraft con temática Halloween.</p></div></article>
+<article class="case-item cinematic-project"><div class="case-media"><img src="assets/images/broadcast-studio.jpg" alt="Imagen referencial de producción y experiencias gaming" loading="lazy" width="1376" height="768"><div class="project-image-shade"></div><h4 class="case-title">Resident Evil Requiem – GameClub</h4><span class="project-image-label">IMAGEN REFERENCIAL</span></div><div class="case-info"><p class="case-summary">Participación en una experiencia vinculada al lanzamiento del videojuego.</p></div></article>
+<article class="case-item cinematic-project"><div class="case-media"><img src="assets/images/champions-trophy.jpg" alt="Imagen referencial de producción y experiencias gaming" loading="lazy" width="1376" height="768"><div class="project-image-shade"></div><h4 class="case-title">Torneo universitario</h4><span class="project-image-label">IMAGEN REFERENCIAL</span></div><div class="case-info"><p class="case-summary">Experiencia en la organización y producción de competencias universitarias.</p></div></article>
 </div>
-</article>
-<article class="case-item">
-<div class="case-info">
-<div class="case-meta">02 / Activaciones de marca</div>
-<h3 class="case-title">Expogame 2026 · Jugabet</h3>
-<p class="case-summary">Producción de stands y experiencias de marca dentro del evento.</p>
-</div>
-</article>
-<article class="case-item">
-<div class="case-info">
-<div class="case-meta">03 / Influencers y activaciones</div>
-<h3 class="case-title">HyperX · Juega como quieras</h3>
-<p class="case-summary">Gestión de influencers y coordinación de piso durante la activación.</p>
-</div>
-</article>
-<article class="case-item">
-<div class="case-info">
-<div class="case-meta">04 / Eventos y eSports</div>
-<h3 class="case-title">Torneos de Fortnite</h3>
-<p class="case-summary">Organización de competencias online y presenciales, convocatoria de participantes y animación.</p>
-</div>
-</article>
-<article class="case-item">
-<div class="case-info">
-<div class="case-meta">05 / Experiencias y gaming</div>
-<h3 class="case-title">Red Bull Gaming Ground · Minecraft</h3>
-<p class="case-summary">Desarrollo de un mapa personalizado de Minecraft bajo la modalidad Juegos del Hambre y producción de un evento presencial.</p>
-</div>
-</article>
-<article class="case-item">
-<div class="case-info">
-<div class="case-meta">06 / Experiencias y gaming</div>
-<h3 class="case-title">BancoEstado · Anomalía Halloween</h3>
-<p class="case-summary">Desarrollo de un mapa personalizado de Minecraft con temática Halloween.</p>
-</div>
-</article>
-</div>
-<p class="portfolio-note">Los proyectos representan experiencia histórica y no implican relaciones o contratos vigentes.</p>
-</div>
-</section>
-<section id="diferenciales" class="section">
-<div class="container">
-<p class="eyebrow">04 / CÓMO TRABAJAMOS</p>
-<div class="section-intro">
-<h2 class="section-heading">De la idea<br>
-<em class="text-flame">a la ejecución.</em>
-</h2>
-<p>Nos adaptamos a cada desafío con creatividad, organización, puntualidad y calidad de producción.</p>
-</div>
-<div class="process-grid">
-<article class="process-step">
-<span class="process-number">01</span>
-<h3>Escuchamos y creamos</h3>
-<p>Recibimos tus ideas, necesidades y objetivos. Desarrollamos una propuesta desde cero o trabajamos sobre una idea definida.</p>
-</article>
-<article class="process-step">
-<span class="process-number">02</span>
-<h3>Planificamos</h3>
-<p>Definimos la estrategia, presupuestos, recursos y equipos necesarios para ejecutar el proyecto.</p>
-</article>
-<article class="process-step">
-<span class="process-number">03</span>
-<h3>Producimos y coordinamos</h3>
-<p>Gestionamos proveedores, personal, equipos técnicos, montaje y coordinación general.</p>
-</article>
-<article class="process-step">
-<span class="process-number">04</span>
-<h3>Acompañamos</h3>
-<p>Mantenemos una comunicación directa y constante, con seguimiento durante todo el proceso.</p>
-</article>
-<article class="process-step">
-<span class="process-number">05</span>
-<h3>Ejecutamos y entregamos</h3>
-<p>Supervisamos cada detalle para cumplir los objetivos y entregar una experiencia de calidad.</p>
-</article>
-</div>
-</div>
-</section>
-<section id="proximos-eventos" class="section section-audience">
-<div class="container split">
-<div>
-<p class="eyebrow">05 / EVENTOS Y TORNEOS</p>
-<h2 class="section-heading">La experiencia<br>
-<em class="text-flame">continúa.</em>
-</h2>
-<p>Eventos, competencias y experiencias que conectan a las personas con las marcas y el entretenimiento.</p>
-</div>
-<div class="event-status">
-<span class="status-dot">
-</span>
-<span>PRÓXIMAMENTE</span>
-<h3>Nuevos encuentros.<br>Nuevas comunidades.</h3>
-<p>Pronto anunciaremos nuestras próximas fechas. Cada evento contará con información, requisitos e inscripciones cuando estén disponibles.</p>
-<a class="link-arrow" href="https://www.instagram.com/pyro_producciones/" target="_blank" rel="noopener noreferrer">Sigue las novedades en Instagram ↗</a>
-</div>
-</div>
-</section>
-<section id="fundadores" class="section">
-<div class="container">
-<p class="eyebrow">06 / NUESTROS FUNDADORES</p>
-<div class="section-intro">
-<h2 class="section-heading">Dos trayectorias.<br>
-<em class="text-flame">Una misma visión.</em>
-</h2>
-<p>Pyro Producciones nace el 8 de octubre de 2026 de la unión de Caoz y Paulina: experiencias complementarias y una pasión compartida por crear y producir.</p>
-</div>
-<div class="audience-grid founders">
-<article class="audience-card">
-<span class="founder-role">CONTENIDO · COMUNIDADES · ESTRATEGIA</span>
-<h3>Caoz<span>↗</span>
-</h3>
-<p>Más de 14 años de trayectoria como streamer y creador de contenido, con millones de visualizaciones y experiencia en entretenimiento digital, comunidades y colaboraciones con marcas.</p>
-<p>Su conocimiento de las audiencias aporta una perspectiva estratégica para desarrollar proyectos que conecten con las personas.</p>
-</article>
-<article class="audience-card">
-<span class="founder-role">PRODUCCIÓN GENERAL · COORDINACIÓN</span>
-<h3>Paulina<span>↗</span>
-</h3>
-<p>Más de 5 años de experiencia en organización y creación de eventos gaming y de otras áreas.</p>
-<p>Como productora general, lidera la planificación, coordinación y ejecución integral de los proyectos, aportando experiencia en producción y desarrollo de experiencias.</p>
-</article>
-</div>
-<div class="vision">
-<span class="eyebrow">NUESTRA VISIÓN</span>
-<p>Consolidarnos como una agencia integral reconocida en Chile y Latinoamérica, trabajar junto a grandes marcas internacionales y desarrollar nuestros propios eventos y proyectos.</p>
-</div>
-</div>
-</section>
-<section id="contacto" class="section section-contact contact">
-<div class="container split">
-<div>
-<p class="eyebrow">07 / REDES Y CONTACTO</p>
-<h2 class="section-heading">Hablemos de tu<br>próximo <em class="text-flame">proyecto.</em>
-</h2>
-<p>Cada gran proyecto comienza con una idea. Cuéntanos qué necesitas y construyamos una propuesta a tu medida.</p>
-<a class="email" href="mailto:contacto@pyroprod.cl">contacto@pyroprod.cl ↗</a>
-<div class="socials">
-<a href="https://www.instagram.com/pyro_producciones/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-<a href="https://www.tiktok.com/@pyro_producciones" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
-<a href="https://www.linkedin.com/company/pyro_producciones/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-</div>
-</div>
-<form id="contactForm">
-<div class="form-row">
-<label>Nombre y apellido *<input name="nombre" autocomplete="name" required maxlength="120">
-</label>
-<label>Empresa o marca<input name="empresa" autocomplete="organization" maxlength="120">
-</label>
-</div>
-<div class="form-row">
-<label>Correo electrónico *<input name="correo" type="email" autocomplete="email" required>
-</label>
-<label>Teléfono<input name="telefono" type="tel" autocomplete="tel" maxlength="40">
-</label>
-</div>
-<label>País<select name="pais">
-<option>Chile</option>
-<option>México</option>
-<option>Otro</option>
-</select>
-</label>
-<fieldset>
-<legend>¿En qué podemos ayudarte? *</legend>
-<div class="checkboxes">
-<label>
-<input type="checkbox" name="servicios" value="Eventos y producciones">Eventos y producciones</label>
-<label>
-<input type="checkbox" name="servicios" value="Marketing y campañas publicitarias">Marketing y campañas publicitarias</label>
-<label>
-<input type="checkbox" name="servicios" value="Activaciones de marca">Activaciones de marca</label>
-<label>
-<input type="checkbox" name="servicios" value="Torneos y eSports">Torneos y eSports</label>
-<label>
-<input type="checkbox" name="servicios" value="Producción audiovisual">Producción audiovisual</label>
-<label>
-<input type="checkbox" name="servicios" value="Colaboraciones y alianzas">Colaboraciones y alianzas</label>
-<label>
-<input type="checkbox" name="servicios" value="Otros proyectos">Otros proyectos</label>
-</div>
-</fieldset>
-<label>Cuéntanos más sobre tu proyecto *<textarea name="proyecto" rows="4" required maxlength="4000" placeholder="Tu idea, objetivos y lo que necesitas…">
-</textarea>
-</label>
-<p class="form-note">Al continuar se abrirá tu aplicación de correo con la solicitud preparada. Revisa el mensaje y envíalo para completar el contacto.</p>
-<button class="btn-primary" type="submit">Preparar solicitud por correo ↗</button>
-<p id="formStatus" role="status" aria-live="polite">
-</p>
-</form>
-</div>
-</section>
-<section class="closing">
-<div class="container">
-<p>Tu idea es el punto de partida.</p>
-<h2 class="section-heading">Nosotros hacemos<br>que <em class="text-flame">suceda.</em>
-</h2>
-<a class="link-arrow" href="#contacto">Empecemos ↗</a>
-</div>
-</section>
+<p class="portfolio-note">Las imágenes son referenciales y se reemplazarán por fotografías de cada proyecto.</p>
+<div class="brand-logo-strip" role="region" aria-label="Marcas" tabindex="0"><div class="brand-logo-track"><div class="brand-logo-group"><span class="brand-logo-item"><img src="assets/logos/brands/redbull.svg" alt="Red Bull" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/hyperx.svg" alt="HyperX" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/samsung.svg" alt="Samsung" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/riotgames.svg" alt="Riot Games" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/epicgames.svg" alt="Epic Games" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/roblox.svg" alt="Roblox" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/nvidia.svg" alt="NVIDIA" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/intel.svg" alt="Intel" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/amd.svg" alt="AMD" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/mcdonalds.svg" alt="McDonald's" width="56" height="56" loading="lazy"></span></div><div class="brand-logo-group" aria-hidden="true"><span class="brand-logo-item"><img src="assets/logos/brands/redbull.svg" alt="" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/hyperx.svg" alt="" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/samsung.svg" alt="" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/riotgames.svg" alt="" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/epicgames.svg" alt="" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/roblox.svg" alt="" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/nvidia.svg" alt="" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/intel.svg" alt="" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/amd.svg" alt="" width="56" height="56" loading="lazy"></span><span class="brand-logo-item"><img src="assets/logos/brands/mcdonalds.svg" alt="" width="56" height="56" loading="lazy"></span></div></div></div>
+</div></section>
+<section id="diferenciales" class="section section-process" aria-label="Cómo trabajamos">
+<div class="scroll-story" id="en-accion" aria-label="Cómo trabajamos">
+<div class="scroll-story-stage" aria-hidden="true"><div class="scroll-story-images"><img class="scroll-story-photo" src="assets/images/broadcast-studio.jpg" alt="" loading="lazy" width="1376" height="768" data-scene-photo="0"><img class="scroll-story-photo" src="assets/images/activation-booth.jpg" alt="" loading="lazy" width="1376" height="768" data-scene-photo="1"><img class="scroll-story-photo" src="assets/images/hero-stage.jpg" alt="" loading="lazy" width="1376" height="768" data-scene-photo="2"></div><div class="scroll-story-shade"></div><div class="scroll-story-footer"><span>PYRO / EN ACCIÓN</span><div class="scroll-story-progress"><span><i data-scene-progress="0"></i></span><span><i data-scene-progress="1"></i></span><span><i data-scene-progress="2"></i></span></div><span>IMÁGENES REFERENCIALES</span></div></div>
+<div class="scroll-story-scenes"><article class="scroll-story-scene" style="--scene-image: url('/assets/images/broadcast-studio.jpg')" data-scene="0"><div class="container scroll-story-copy"><h3>Escuchamos y creamos</h3><p class="scroll-story-description">Recibimos las ideas, necesidades y objetivos del cliente. Podemos desarrollar una propuesta desde cero o trabajar sobre una idea previamente definida.</p></div></article>
+<article class="scroll-story-scene" style="--scene-image: url('/assets/images/activation-booth.jpg')" data-scene="1"><div class="container scroll-story-copy"><h3>Planificamos</h3><p class="scroll-story-description">Desarrollamos la estrategia, definimos presupuestos, recursos, equipos y todos los aspectos necesarios para ejecutar el proyecto.</p></div></article>
+<article class="scroll-story-scene" style="--scene-image: url('/assets/images/hero-stage.jpg')" data-scene="2"><div class="container scroll-story-copy"><h3>Producimos y coordinamos</h3><p class="scroll-story-description">Gestionamos proveedores, personal, equipos técnicos, montaje y coordinación general. Nos involucramos en cada etapa para garantizar una producción organizada y profesional.</p></div></article></div><p class="scroll-story-reference">IMÁGENES REFERENCIALES</p></div>
+<div class="container process-followup"><div class="process-grid"><article class="process-step"><h3>04. Acompañamos</h3><p>Mantenemos comunicación directa y constante con nuestros clientes, realizando seguimiento y resolviendo dudas durante todo el proceso.</p></article><article class="process-step"><h3>05. Ejecutamos y entregamos</h3><p>Supervisamos cada detalle para cumplir los objetivos establecidos, respetar la visión del cliente y entregar una experiencia de calidad.</p></article></div></div></section>
+<section id="proximos-eventos" class="section section-audience" aria-labelledby="events-title"><div class="container">
+<div class="section-intro"><h2 class="section-heading" id="events-title">La experiencia continúa.</h2><div class="section-intro-copy"><p>En Pyro Producciones desarrollamos y participamos en eventos, torneos y experiencias que conectan a las personas con las marcas y el entretenimiento.</p><p>En esta sección podrás encontrar nuestras próximas actividades, competencias y eventos abiertos al público.</p></div></div>
+<div class="event-categories"><article class="event-category"><h3>Próximos eventos</h3><p class="event-availability">Próximamente</p></article><article class="event-category"><h3>Próximos torneos</h3><p class="event-availability">Próximamente</p></article><article class="event-category"><h3>Inscripciones abiertas</h3><p class="event-availability">Próximamente</p></article><article class="event-category"><h3>Eventos realizados</h3><p class="event-availability">Próximamente</p></article></div>
+<div class="event-registration"><h3 class="content-subheading">Inscripciones</h3><p>Participa en nuestras competencias y actividades mediante el sistema de inscripción disponible directamente en nuestra página web.</p><p>Cada torneo contará con su propia información, fechas, requisitos y formulario de inscripción.</p></div>
+</div></section>
+<section id="fundadores" class="section" aria-labelledby="founders-title"><div class="container">
+<div class="section-intro"><h2 class="section-heading" id="founders-title">Dos trayectorias. Una misma visión.</h2><p>Pyro Producciones nace oficialmente el 8 de octubre de 2026, a partir de la unión de Caoz y Paulina, dos perfiles con experiencias complementarias que comparten la pasión por crear, producir y desarrollar proyectos.</p></div>
+<div class="audience-grid founders"><article class="audience-card"><h3>Caoz</h3><p>Con más de 14 años de trayectoria como streamer y creador de contenido, Caoz cuenta con millones de visualizaciones y una amplia experiencia en entretenimiento digital, plataformas de contenido, comunidades y colaboraciones con marcas.</p><p>Su conocimiento de las audiencias y del ecosistema digital aporta una perspectiva estratégica para desarrollar campañas, experiencias y proyectos que conecten con las personas.</p></article><article class="audience-card"><h3>Paulina</h3><p>Con más de 5 años de experiencia en organización y creación de eventos gaming y de otras áreas, Paulina aporta conocimientos en producción, coordinación y desarrollo de experiencias.</p><p>Su participación como productora general permite liderar la planificación, coordinación y ejecución integral de los proyectos.</p></article></div>
+<div class="vision"><h3 class="content-subheading">Nuestra visión</h3><div><p>Aspiramos a convertirnos en una productora reconocida en Chile y Latinoamérica, trabajando junto a grandes marcas internacionales y expandiendo nuestras operaciones hacia nuevos mercados.</p><p>Buscamos consolidarnos como una agencia integral de marketing, publicidad y producción, desarrollando también nuestros propios eventos y proyectos.</p></div></div></div></section>
+<section id="contacto" class="section section-contact contact" aria-labelledby="contact-title"><div class="container split"><div>
+<h2 class="section-heading" id="contact-title">Hablemos de tu próximo proyecto.</h2><p>Cada gran proyecto comienza con una idea. Cuéntanos qué necesitas y nuestro equipo se pondrá en contacto contigo para conocer tus objetivos y desarrollar una propuesta a tu medida.</p>
+<h3 class="contact-subheading">Correo corporativo</h3><a class="email" href="mailto:contacto@pyroprod.cl">contacto@pyroprod.cl</a>
+<h3 class="contact-subheading">Redes sociales</h3><div class="socials"><a href="https://www.instagram.com/pyro_producciones/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/icons/phosphor/instagram-logo.svg" alt="" width="22" height="22" loading="lazy"><span>@pyro_producciones</span></a><a href="https://www.tiktok.com/@pyro_producciones" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/icons/phosphor/tiktok-logo.svg" alt="" width="22" height="22" loading="lazy"><span>@pyro_producciones</span></a><a href="https://www.linkedin.com/company/pyro_producciones/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/icons/phosphor/linkedin-logo.svg" alt="" width="22" height="22" loading="lazy"><span>@pyro_producciones</span></a></div></div>
+<form id="contactForm"><div class="form-row"><label>Nombre y apellido<input name="nombre" autocomplete="name" required maxlength="120"></label><label>Empresa o marca<input name="empresa" autocomplete="organization" maxlength="120"></label></div><div class="form-row"><label>Correo electrónico<input name="correo" type="email" autocomplete="email" required></label><label>Teléfono de contacto<input name="telefono" type="tel" autocomplete="tel" maxlength="40"></label></div><label>País<select name="pais"><option>Chile</option><option>México</option><option>Otro</option></select></label>
+<fieldset><legend>¿En qué podemos ayudarte?</legend><div class="checkboxes"><label><input type="checkbox" name="servicios" value="Cotización de eventos y producciones">Cotización de eventos y producciones</label><label><input type="checkbox" name="servicios" value="Marketing y campañas publicitarias">Marketing y campañas publicitarias</label><label><input type="checkbox" name="servicios" value="Activaciones de marca">Activaciones de marca</label><label><input type="checkbox" name="servicios" value="Torneos y eSports">Torneos y eSports</label><label><input type="checkbox" name="servicios" value="Producción audiovisual">Producción audiovisual</label><label><input type="checkbox" name="servicios" value="Colaboraciones y alianzas comerciales">Colaboraciones y alianzas comerciales</label><label><input type="checkbox" name="servicios" value="Otros proyectos">Otros proyectos</label></div></fieldset><label>Cuéntanos más sobre tu proyecto<textarea name="proyecto" rows="5" required maxlength="4000"></textarea></label><p class="form-note">Al continuar se abrirá tu aplicación de correo con la solicitud preparada. Revisa el mensaje y envíalo para completar el contacto.</p><button class="btn-primary" type="submit">Enviar solicitud</button><p id="formStatus" role="status" aria-live="polite"></p></form></div></section>
+<section class="closing" id="cierre" aria-labelledby="closing-title"><div class="container"><h2 class="section-heading" id="closing-title">Tu idea es el punto de partida. Nosotros hacemos que suceda.</h2><p class="closing-company">PYRO PRODUCCIONES</p><p>Marketing · Publicidad · Producción</p><p>Chile · México</p></div></section>
 </main>
-<footer class="site-footer">
-<div class="container footer-inner">
-<a class="brand-logo" href="#hero">
-<span class="brand-logo-text">PYROPROD<span class="brand-period">.</span>
-</span>
-</a>
-<p>Marketing · Publicidad · Producción<br>Chile · México</p>
-<p>© 2026 Pyro Producciones</p>
-<a href="#hero">Volver arriba ↑</a>
-</div>
-</footer>
-<script src="js/main.js">
-</script>
-</body>
-</html>
+<footer class="site-footer"><div class="container footer-inner"><a class="brand-logo" href="#hero" aria-label="Pyro Producciones, inicio"><img src="assets/images/logo-symbol.png" alt="" class="brand-logo-img"><span class="brand-logo-text">PYRO<span class="brand-logo-subtitle">PRODUCCIONES</span></span></a><p>Marketing · Publicidad · Producción<br>Chile · México</p><p>© 2026 Pyro Producciones</p><a href="#hero">Volver arriba ↑</a></div></footer>
+<script src="js/main.js"></script><script src="js/motion.js"></script>
+</body></html>
