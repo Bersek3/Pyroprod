@@ -1,0 +1,77 @@
+[
+  {
+    "name": "movistar",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/movistar.svg"
+  },
+  {
+    "name": "minecraft",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/11.15.0/icons/minecraft.svg"
+  },
+  {
+    "name": "cocacola",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cocacola.svg"
+  },
+  {
+    "name": "logitech",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/11.15.0/icons/logitech.svg"
+  },
+  {
+    "name": "pokemon",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/11.15.0/icons/pokemon.svg"
+  },
+  {
+    "name": "falabella",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Falabella.svg",
+    "page": "https://commons.wikimedia.org/wiki/File:Falabella.svg"
+  },
+  {
+    "name": "bancochile",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Banco_de_Chile_Logotipo.svg",
+    "page": "https://commons.wikimedia.org/wiki/File:Banco_de_Chile_Logotipo.svg"
+  },
+  {
+    "name": "bancoestado",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Logo_BancoEstado.svg",
+    "page": "https://commons.wikimedia.org/wiki/File:Logo_BancoEstado.svg"
+  },
+  {
+    "name": "gobiernochile",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_Gobierno_de_Chile_Simplificado.svg",
+    "page": "https://commons.wikimedia.org/wiki/File:Logo_Gobierno_de_Chile_Simplificado.svg"
+  },
+  {
+    "name": "omen",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/HP_Omen_logo.svg",
+    "page": "https://commons.wikimedia.org/wiki/File:HP_Omen_logo.svg"
+  },
+  {
+    "name": "sonic",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Sonic_the_Hedgehog_logo.svg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sonic_the_Hedgehog_logo.svg"
+  },
+  {
+    "name": "doritos",
+    "url": "https://cdn.worldvectorlogo.com/logos/doritos.svg"
+  },
+  {
+    "name": "pinup",
+    "url": "https://i.logos-download.com/114075/30165-847ce36c4ad678c20dd414f949fdfcc1.svg/Pin-Up_Logo_2018.svg?dl"
+  },
+  {
+    "name": "monsterenergy",
+    "url": "https://cdn.worldvectorlogo.com/logos/monster-energy-beverage-co.svg"
+  },
+  {
+    "name": "1xbet",
+    "url": "https://logodownload.org/wp-content/uploads/2023/03/1xbet-logo-4.png"
+  },
+  {
+    "name": "jugabet",
+    "url": "https://juga-bet.com/static/iolite/icons/Jugabet_180.png"
+  },
+  {
+    "name": "redbull",
+    "url": "https://www.redbull.com/v3/resources/images/client/header/redbullcom-logo_double-with-text.svg",
+    "note": "Official file supplied by user; original SVG preserved."
+  }
+]
