@@ -100,7 +100,7 @@
       media.append(Object.assign(document.createElement('h4'), { className: 'case-title', textContent: event.title }));
       const info = Object.assign(document.createElement('div'), { className: 'case-info' });
       info.append(Object.assign(document.createElement('p'), { className: 'case-meta', textContent: `${event.gameName} · ${formatDate(event.startDate)}` }));
-      info.append(Object.assign(document.createElement('p'), { className: 'case-summary', textContent: `${event.participantCount}/${event.maxParticipants} cupos · ${event.entryFee} · Premio: ${event.prizePool}` }));
+      info.append(Object.assign(document.createElement('p'), { className: 'case-summary', textContent: `Cupos: ${event.participantCount} de ${event.maxParticipants} · Inscripción: ${event.entryFee} · Premio: ${event.prizePool}` }));
       link.append(media, info); article.append(link); return article;
     };
     fetch('/api/public/tournaments', { headers: { Accept: 'application/json' } })

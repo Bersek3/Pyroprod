@@ -2320,6 +2320,7 @@ html, body { color-scheme: light dark; background: var(--bg-deep); color: var(--
 
 /* CZ Arena: cards integrated with the Pyro editorial visual system. */
 #proximos-eventos .arena-events { margin: 42px 0 0; }
+#proximos-eventos .arena-events-heading { display: block; margin-bottom: 22px; }
 #proximos-eventos .arena-events-grid { gap: 22px; }
 #proximos-eventos .arena-event-card {
   border: 1px solid var(--border-medium);
@@ -2363,9 +2364,9 @@ html, body { color-scheme: light dark; background: var(--bg-deep); color: var(--
   font-weight: 800;
   letter-spacing: -.04em;
 }
-#proximos-eventos .arena-event-card .case-info { padding: 20px 24px 22px; }
-#proximos-eventos .arena-event-card .case-meta { color: var(--accent-primary-deep); font-weight: 700; letter-spacing: .035em; }
-#proximos-eventos .arena-event-card .case-summary { margin: 9px 0 16px; color: var(--text-secondary); line-height: 1.55; }
+#proximos-eventos .arena-event-card .case-info { padding: 22px 24px 24px; }
+#proximos-eventos .arena-event-card .case-meta { color: var(--accent-primary-deep); font-size: .72rem; font-weight: 700; letter-spacing: .04em; }
+#proximos-eventos .arena-event-card .case-summary { margin: 12px 0 18px; color: var(--text-primary); font-size: .9rem; font-weight: 600; line-height: 1.7; }
 #proximos-eventos .arena-event-card .case-info::after {
   content: 'Ver torneo  ↗';
   color: var(--text-pure);
