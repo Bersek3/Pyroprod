@@ -2317,3 +2317,66 @@ html, body { color-scheme: light dark; background: var(--bg-deep); color: var(--
   .founders .founder-copy p { grid-column: 2; font-size: .84rem; line-height: 1.7; margin: 0; }
   .founders .founder-copy p:last-child { grid-column: 1 / -1; margin-top: 20px; }
 }
+
+/* CZ Arena: cards integrated with the Pyro editorial visual system. */
+#proximos-eventos .arena-events { margin: 42px 0 0; }
+#proximos-eventos .arena-events-grid { gap: 22px; }
+#proximos-eventos .arena-event-card {
+  border: 1px solid var(--border-medium);
+  border-radius: 10px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transform: none;
+}
+#proximos-eventos .arena-event-card:hover,
+#proximos-eventos .arena-event-card:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+#proximos-eventos .arena-event-card .case-media { aspect-ratio: 16 / 9; border-radius: 0; }
+#proximos-eventos .arena-event-card .case-media::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  background: var(--accent-gradient);
+}
+#proximos-eventos .arena-event-card .project-image-label {
+  border: 0;
+  border-radius: 3px;
+  background: var(--accent-gradient);
+  padding: 6px 9px;
+  font-weight: 700;
+  color: #fff;
+}
+#proximos-eventos .arena-event-card .case-title {
+  bottom: 27px;
+  left: 24px;
+  right: 24px;
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+}
+#proximos-eventos .arena-event-card .case-info { padding: 20px 24px 22px; }
+#proximos-eventos .arena-event-card .case-meta { color: var(--accent-primary-deep); font-weight: 700; letter-spacing: .035em; }
+#proximos-eventos .arena-event-card .case-summary { margin: 9px 0 16px; color: var(--text-secondary); line-height: 1.55; }
+#proximos-eventos .arena-event-card .case-info::after {
+  content: 'Ver torneo  ↗';
+  color: var(--text-pure);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+#proximos-eventos .arena-event-card:hover .case-info::after { color: var(--accent-primary-deep); }
+@media (max-width: 700px) {
+  #proximos-eventos .arena-event-card .case-title { bottom: 23px; left: 20px; right: 20px; }
+  #proximos-eventos .arena-event-card .case-info { padding: 18px 20px 20px; }
+}
