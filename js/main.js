@@ -82,4 +82,33 @@
     window.location.href = 'mailto:contacto@pyroprod.cl?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     status.textContent = 'Solicitud preparada. Completa el envío desde tu aplicación de correo. Si no se abre, escríbenos a contacto@pyroprod.cl.';
   });
+
+  const eventsContainer = document.getElementById('arenaEvents');
+  if (eventsContainer) {
+    const labels = { in_progress: 'EN JUEGO', check_in: 'CHECK-IN ABIERTO', registration_open: 'INSCRIPCIONES ABIERTAS' };
+    const fallbackImage = 'assets/images/champions-trophy.jpg';
+    const formatDate = value => new Intl.DateTimeFormat('es-CL', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(value));
+    const showMessage = message => { eventsContainer.replaceChildren(Object.assign(document.createElement('p'), { className: 'arena-events-message', textContent: message })); };
+    const createCard = event => {
+      const article = Object.assign(document.createElement('article'), { className: 'case-item cinematic-project arena-event-card' });
+      const link = Object.assign(document.createElement('a'), { className: 'arena-event-link', href: `/tournament/${encodeURIComponent(event.slug)}`, 'aria-label': `Ver torneo ${event.title}` });
+      const media = Object.assign(document.createElement('div'), { className: 'case-media' });
+      const image = Object.assign(document.createElement('img'), { src: event.bannerUrl || fallbackImage, alt: '', loading: 'lazy', decoding: 'async' });
+      image.addEventListener('error', () => { image.src = fallbackImage; }, { once: true });
+      media.append(image, Object.assign(document.createElement('div'), { className: 'project-image-shade' }));
+      media.append(Object.assign(document.createElement('span'), { className: 'project-image-label', textContent: labels[event.status] || 'CZ ARENA' }));
+      media.append(Object.assign(document.createElement('h4'), { className: 'case-title', textContent: event.title }));
+      const info = Object.assign(document.createElement('div'), { className: 'case-info' });
+      info.append(Object.assign(document.createElement('p'), { className: 'case-meta', textContent: `${event.gameName} · ${formatDate(event.startDate)}` }));
+      info.append(Object.assign(document.createElement('p'), { className: 'case-summary', textContent: `${event.participantCount}/${event.maxParticipants} cupos · ${event.entryFee} · Premio: ${event.prizePool}` }));
+      link.append(media, info); article.append(link); return article;
+    };
+    fetch('/api/public/tournaments', { headers: { Accept: 'application/json' } })
+      .then(response => response.ok ? response.json() : Promise.reject())
+      .then(({ tournaments }) => {
+        if (!Array.isArray(tournaments) || !tournaments.length) return showMessage('No hay torneos activos en este momento. Pronto habrá nuevas fechas.');
+        eventsContainer.replaceChildren(...tournaments.map(createCard));
+      })
+      .catch(() => showMessage('No pudimos cargar los eventos ahora. Visita CZ Arena para ver el calendario.'));
+  }
 });
